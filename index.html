@@ -328,11 +328,16 @@
             transition: transform 0.2s, box-shadow 0.2s;
             border: 1px solid #eee;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.3s ease forwards;
         }
 
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Poster cards - Rectangle shape */
@@ -456,6 +461,50 @@
             color: #666;
             margin-top: 5px;
             text-align: center;
+        }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+        }
+
+        .skeleton-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skeleton-image {
+            width: 100%;
+            height: 150px;
+            background: #e0e0e0;
+        }
+
+        .skeleton-title {
+            height: 24px;
+            width: 80%;
+            margin: 15px 15px 10px;
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .skeleton-text {
+            height: 16px;
+            width: 90%;
+            margin: 0 15px;
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         /* Contact Section */
@@ -779,19 +828,25 @@
         <!-- Posters Section -->
         <section id="posters">
             <div class="section-title"><h2>🖼️ Posters</h2></div>
-            <div class="content-grid" id="posters-grid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading posters...</div></div>
+            <div class="content-grid" id="posters-grid">
+                <!-- Skeleton loading will be shown here -->
+            </div>
         </section>
         
         <!-- Images Section -->
         <section id="images">
             <div class="section-title"><h2>📸 Images</h2></div>
-            <div class="content-grid" id="images-grid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading images...</div></div>
+            <div class="content-grid" id="images-grid">
+                <!-- Skeleton loading will be shown here -->
+            </div>
         </section>
         
         <!-- Videos Section -->
         <section id="videos">
             <div class="section-title"><h2>🎥 Videos</h2></div>
-            <div class="content-grid" id="videos-grid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading videos...</div></div>
+            <div class="content-grid" id="videos-grid">
+                <!-- Skeleton loading will be shown here -->
+            </div>
         </section>
     </div>
 
@@ -927,7 +982,7 @@
     <!-- Firebase SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getFirestore, collection, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp, limit, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyCzCp_EGGmSolCSy8iQNrQAE-vGO8vTKIo",
@@ -953,6 +1008,7 @@
         window.query = query;
         window.orderBy = orderBy;
         window.serverTimestamp = serverTimestamp;
+        window.limit = limit;
         
         console.log("✅ Firebase initialized");
     </script>
@@ -1020,10 +1076,21 @@
             const posterImgPreview = document.getElementById('poster-image-preview');
             const posterImgUrl = document.getElementById('poster-image-url');
 
-            // Data arrays
+            // Data arrays with cache
             let images = [];
             let videos = [];
             let posters = [];
+            let isLoading = false;
+            let loadAttempts = 0;
+            const MAX_ATTEMPTS = 3;
+
+            // Cache for offline support
+            const cache = {
+                images: null,
+                videos: null,
+                posters: null,
+                timestamp: null
+            };
 
             // Helper functions
             function showNotification(msg, type) {
@@ -1033,17 +1100,93 @@
                 setTimeout(() => notification.style.display = 'none', 3000);
             }
 
+            // Show skeleton loading
+            function showSkeletonLoad() {
+                const skeletonHTML = Array(3).fill(0).map(() => `
+                    <div class="skeleton-card">
+                        <div class="skeleton-image skeleton"></div>
+                        <div class="skeleton-title skeleton"></div>
+                        <div class="skeleton-text skeleton"></div>
+                    </div>
+                `).join('');
+                
+                if (postersGrid.children.length === 0 || postersGrid.innerHTML.includes('loading')) {
+                    postersGrid.innerHTML = skeletonHTML;
+                }
+                if (imagesGrid.children.length === 0 || imagesGrid.innerHTML.includes('loading')) {
+                    imagesGrid.innerHTML = skeletonHTML;
+                }
+                if (videosGrid.children.length === 0 || videosGrid.innerHTML.includes('loading')) {
+                    videosGrid.innerHTML = skeletonHTML;
+                }
+            }
+
+            // Load with retry mechanism
+            async function loadWithRetry(loadFunction, maxAttempts = MAX_ATTEMPTS) {
+                for (let i = 0; i < maxAttempts; i++) {
+                    try {
+                        return await loadFunction();
+                    } catch (e) {
+                        console.log(`Attempt ${i + 1} failed:`, e);
+                        if (i === maxAttempts - 1) throw e;
+                        // Wait before retry (exponential backoff)
+                        await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, i)));
+                    }
+                }
+            }
+
             async function loadAll() {
-                await loadImages(); 
-                await loadVideos(); 
-                await loadPosters();
-                renderPosters(); 
-                renderImages(); 
-                renderVideos();
-                if (adminPanel.style.display === 'block') { 
-                    renderAdminPosters(); 
-                    renderAdminImages(); 
-                    renderAdminVideos(); 
+                if (isLoading) return;
+                isLoading = true;
+                
+                showSkeletonLoad();
+                
+                try {
+                    // Load all in parallel with retry
+                    await Promise.all([
+                        loadWithRetry(loadImages),
+                        loadWithRetry(loadVideos),
+                        loadWithRetry(loadPosters)
+                    ]);
+                    
+                    // Update cache
+                    cache.images = images;
+                    cache.videos = videos;
+                    cache.posters = posters;
+                    cache.timestamp = Date.now();
+                    
+                    renderPosters(); 
+                    renderImages(); 
+                    renderVideos();
+                    
+                    if (adminPanel.style.display === 'block') { 
+                        renderAdminPosters(); 
+                        renderAdminImages(); 
+                        renderAdminVideos(); 
+                    }
+                } catch (e) {
+                    console.error('All load attempts failed:', e);
+                    
+                    // Try to use cache if available
+                    if (cache.images && cache.videos && cache.posters) {
+                        images = cache.images;
+                        videos = cache.videos;
+                        posters = cache.posters;
+                        renderPosters(); 
+                        renderImages(); 
+                        renderVideos();
+                        showNotification('Showing cached data', 'info');
+                    } else {
+                        showNotification('Failed to load data. Please refresh.', 'error');
+                        
+                        // Show empty states
+                        postersGrid.innerHTML = '<div class="no-content">Failed to load posters</div>';
+                        imagesGrid.innerHTML = '<div class="no-content">Failed to load images</div>';
+                        videosGrid.innerHTML = '<div class="no-content">Failed to load videos</div>';
+                    }
+                } finally {
+                    isLoading = false;
+                    loadAttempts = 0;
                 }
             }
 
@@ -1053,9 +1196,10 @@
                     const snap = await getDocs(q);
                     images = snap.docs.map(d => ({ id: d.id, ...d.data() }));
                     console.log('Images loaded:', images.length);
+                    return images;
                 } catch (e) { 
                     console.error('Error loading images:', e); 
-                    images = []; 
+                    throw e;
                 }
             }
             
@@ -1065,9 +1209,10 @@
                     const snap = await getDocs(q);
                     videos = snap.docs.map(d => ({ id: d.id, ...d.data() }));
                     console.log('Videos loaded:', videos.length);
+                    return videos;
                 } catch (e) { 
                     console.error('Error loading videos:', e); 
-                    videos = []; 
+                    throw e;
                 }
             }
             
@@ -1077,9 +1222,10 @@
                     const snap = await getDocs(q);
                     posters = snap.docs.map(d => ({ id: d.id, ...d.data() }));
                     console.log('Posters loaded:', posters.length);
+                    return posters;
                 } catch (e) { 
                     console.error('Error loading posters:', e); 
-                    posters = []; 
+                    throw e;
                 }
             }
 
@@ -1090,7 +1236,27 @@
                 try {
                     await deleteDoc(doc(db, type + 's', id));
                     showNotification(`${type} deleted successfully`, 'success');
-                    await loadAll();
+                    
+                    // Update local arrays
+                    if (type === 'image') images = images.filter(i => i.id !== id);
+                    if (type === 'video') videos = videos.filter(v => v.id !== id);
+                    if (type === 'poster') posters = posters.filter(p => p.id !== id);
+                    
+                    // Update cache
+                    cache.images = images;
+                    cache.videos = videos;
+                    cache.posters = posters;
+                    
+                    // Re-render
+                    renderPosters(); 
+                    renderImages(); 
+                    renderVideos();
+                    
+                    if (adminPanel.style.display === 'block') { 
+                        renderAdminPosters(); 
+                        renderAdminImages(); 
+                        renderAdminVideos(); 
+                    }
                 } catch (err) {
                     console.error('Delete error:', err);
                     showNotification(`Error deleting ${type}`, 'error');
@@ -1103,18 +1269,25 @@
                     imagesGrid.innerHTML = '<div class="no-content">No images</div>'; 
                     return; 
                 }
-                filtered.forEach(a => {
+                
+                // Use document fragment for better performance
+                const fragment = document.createDocumentFragment();
+                
+                filtered.forEach((a, index) => {
                     const card = document.createElement('div'); 
                     card.className = 'content-card';
+                    card.style.animationDelay = `${index * 0.05}s`;
                     
                     // Add delete button for admin
                     const deleteBtn = adminPanel.style.display === 'block' ? 
                         `<button class="delete-content-btn" onclick="window.deleteContent('image', '${a.id}')"><i class="fas fa-trash"></i></button>` : '';
                     
-                    card.innerHTML = `${deleteBtn}<img src="${a.imageUrl || 'https://via.placeholder.com/300x200?text=Image'}" alt="${a.title}">
+                    card.innerHTML = `${deleteBtn}<img src="${a.imageUrl || 'https://via.placeholder.com/300x200?text=Image'}" alt="${a.title}" loading="lazy">
                         <div class="content-info"><h3>${a.title}</h3><p>${a.description || ''}</p></div>`;
-                    imagesGrid.appendChild(card);
+                    fragment.appendChild(card);
                 });
+                
+                imagesGrid.appendChild(fragment);
             }
             
             function renderVideos(filtered = videos) {
@@ -1123,9 +1296,13 @@
                     videosGrid.innerHTML = '<div class="no-content">No videos</div>'; 
                     return; 
                 }
-                filtered.forEach(v => {
+                
+                const fragment = document.createDocumentFragment();
+                
+                filtered.forEach((v, index) => {
                     const card = document.createElement('div'); 
                     card.className = 'content-card';
+                    card.style.animationDelay = `${index * 0.05}s`;
                     
                     // Add delete button for admin
                     const deleteBtn = adminPanel.style.display === 'block' ? 
@@ -1144,24 +1321,26 @@
                             
                             if (videoId) {
                                 videoHtml = `<div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy"></iframe>
                                 </div>`;
                             } else {
                                 videoHtml = `<div class="video-container">
-                                    <video src="${v.videoUrl}" controls></video>
+                                    <video src="${v.videoUrl}" controls preload="metadata"></video>
                                 </div>`;
                             }
                         } else {
                             // Direct video file
                             videoHtml = `<div class="video-container">
-                                <video src="${v.videoUrl}" controls></video>
+                                <video src="${v.videoUrl}" controls preload="metadata"></video>
                             </div>`;
                         }
                     }
                     
                     card.innerHTML = `${deleteBtn}${videoHtml}<div class="content-info"><h3>${v.title}</h3><p>${v.description || ''}</p></div>`;
-                    videosGrid.appendChild(card);
+                    fragment.appendChild(card);
                 });
+                
+                videosGrid.appendChild(fragment);
             }
             
             function renderPosters(filtered = posters) {
@@ -1170,17 +1349,23 @@
                     postersGrid.innerHTML = '<div class="no-content">No posters</div>'; 
                     return; 
                 }
-                filtered.forEach(p => {
+                
+                const fragment = document.createDocumentFragment();
+                
+                filtered.forEach((p, index) => {
                     const card = document.createElement('div'); 
                     card.className = 'content-card poster-card';
+                    card.style.animationDelay = `${index * 0.05}s`;
                     
                     // Add delete button for admin
                     const deleteBtn = adminPanel.style.display === 'block' ? 
                         `<button class="delete-content-btn" onclick="window.deleteContent('poster', '${p.id}')"><i class="fas fa-trash"></i></button>` : '';
                     
-                    card.innerHTML = `${deleteBtn}<img src="${p.imageUrl || 'https://via.placeholder.com/300x200?text=Poster'}" alt="${p.title}"><div class="content-info"><h3>${p.title}</h3><p>${p.description || ''}</p></div>`;
-                    postersGrid.appendChild(card);
+                    card.innerHTML = `${deleteBtn}<img src="${p.imageUrl || 'https://via.placeholder.com/300x200?text=Poster'}" alt="${p.title}" loading="lazy"><div class="content-info"><h3>${p.title}</h3><p>${p.description || ''}</p></div>`;
+                    fragment.appendChild(card);
                 });
+                
+                postersGrid.appendChild(fragment);
             }
 
             // Admin panel render functions
@@ -1188,7 +1373,7 @@
                 if (!adminImagesGrid) return;
                 adminImagesGrid.innerHTML = images.map(a => `
                     <div class="content-card" style="aspect-ratio: auto;">
-                        <img src="${a.imageUrl}" style="height:100px; object-fit: cover;">
+                        <img src="${a.imageUrl}" style="height:100px; object-fit: cover;" loading="lazy">
                         <div class="content-info">
                             <h4>${a.title}</h4>
                             <button class="admin-delete-btn" onclick="window.deleteContent('image', '${a.id}')">
@@ -1218,7 +1403,7 @@
                 if (!adminPostersGrid) return;
                 adminPostersGrid.innerHTML = posters.map(p => `
                     <div class="content-card" style="aspect-ratio: auto;">
-                        <img src="${p.imageUrl}" style="height:100px; object-fit: cover;">
+                        <img src="${p.imageUrl}" style="height:100px; object-fit: cover;" loading="lazy">
                         <div class="content-info">
                             <h4>${p.title}</h4>
                             <button class="admin-delete-btn" onclick="window.deleteContent('poster', '${p.id}')">
@@ -1393,7 +1578,12 @@
                     adminModal.style.display = 'none';
                     adminPanel.style.display = 'block';
                     showNotification('Logged in as Admin', 'success');
-                    loadAll();
+                    renderPosters(); 
+                    renderImages(); 
+                    renderVideos();
+                    renderAdminPosters(); 
+                    renderAdminImages(); 
+                    renderAdminVideos(); 
                 } else {
                     showNotification('Invalid email or password!', 'error');
                 }
@@ -1402,8 +1592,10 @@
             logoutBtn.addEventListener('click', () => { 
                 adminPanel.style.display = 'none'; 
                 showNotification('Logged out', 'success');
-                // Reload to remove delete buttons
-                loadAll();
+                // Re-render without delete buttons
+                renderPosters(); 
+                renderImages(); 
+                renderVideos();
             });
 
             // Upload image
@@ -1441,7 +1633,11 @@
                     imageForm.reset(); 
                     imageImgPreview.innerHTML=''; 
                     imageImgUrl.value=''; 
-                    await loadAll(); 
+                    
+                    // Reload only images
+                    await loadImages();
+                    renderImages();
+                    if (adminPanel.style.display === 'block') renderAdminImages();
                     
                     setTimeout(() => {
                         imageProgress.style.display = 'none';
@@ -1458,7 +1654,7 @@
                 }
             });
 
-            // Upload video - Fixed
+            // Upload video
             videoForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 
@@ -1491,7 +1687,11 @@
                     
                     showNotification('Video uploaded successfully', 'success'); 
                     videoForm.reset(); 
-                    await loadAll(); 
+                    
+                    // Reload only videos
+                    await loadVideos();
+                    renderVideos();
+                    if (adminPanel.style.display === 'block') renderAdminVideos();
                     
                     setTimeout(() => {
                         videoProgress.style.display = 'none';
@@ -1543,7 +1743,11 @@
                     posterForm.reset(); 
                     posterImgPreview.innerHTML=''; 
                     posterImgUrl.value=''; 
-                    await loadAll(); 
+                    
+                    // Reload only posters
+                    await loadPosters();
+                    renderPosters();
+                    if (adminPanel.style.display === 'block') renderAdminPosters();
                     
                     setTimeout(() => {
                         posterProgress.style.display = 'none';
@@ -1560,18 +1764,22 @@
                 }
             });
 
-            // Search
+            // Search with debounce
+            let searchTimeout;
             searchBar.addEventListener('input', function() {
-                let term = this.value.toLowerCase();
-                if (!term) { 
-                    renderPosters(); 
-                    renderImages(); 
-                    renderVideos(); 
-                    return; 
-                }
-                renderPosters(posters.filter(p => p.title.toLowerCase().includes(term) || (p.description && p.description.toLowerCase().includes(term))));
-                renderImages(images.filter(a => a.title.toLowerCase().includes(term) || (a.description && a.description.toLowerCase().includes(term))));
-                renderVideos(videos.filter(v => v.title.toLowerCase().includes(term) || (v.description && v.description.toLowerCase().includes(term))));
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    let term = this.value.toLowerCase();
+                    if (!term) { 
+                        renderPosters(posters); 
+                        renderImages(images); 
+                        renderVideos(videos); 
+                        return; 
+                    }
+                    renderPosters(posters.filter(p => p.title.toLowerCase().includes(term) || (p.description && p.description.toLowerCase().includes(term))));
+                    renderImages(images.filter(a => a.title.toLowerCase().includes(term) || (a.description && a.description.toLowerCase().includes(term))));
+                    renderVideos(videos.filter(v => v.title.toLowerCase().includes(term) || (v.description && v.description.toLowerCase().includes(term))));
+                }, 300);
             });
 
             // Categories filter
@@ -1581,26 +1789,31 @@
                 e.target.classList.add('active');
                 let cat = e.target.dataset.category;
                 if (cat === 'all') { 
-                    renderPosters(); 
-                    renderImages(); 
-                    renderVideos(); 
+                    renderPosters(posters); 
+                    renderImages(images); 
+                    renderVideos(videos); 
                 } else if (cat === 'poster') {
-                    renderPosters();
+                    renderPosters(posters);
                     imagesGrid.innerHTML = ''; 
                     videosGrid.innerHTML = ''; 
                 } else if (cat === 'image') {
-                    renderImages();
+                    renderImages(images);
                     postersGrid.innerHTML = ''; 
                     videosGrid.innerHTML = ''; 
                 } else if (cat === 'video') {
-                    renderVideos();
+                    renderVideos(videos);
                     postersGrid.innerHTML = ''; 
                     imagesGrid.innerHTML = ''; 
                 }
             });
 
-            // Initial load
-            loadAll();
+            // Initial load with timeout
+            setTimeout(() => {
+                loadAll();
+            }, 100);
+
+            // Retry button if needed
+            window.retryLoad = loadAll;
         })();
     </script>
 </body>
