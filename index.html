@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Toppers Hub - Learn & Grow</title>
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="zykTbQkdf5dPPgpVTfiYRXbbOxgNHy7e6_BS-RwxM08" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Education Toppers Hub – your gateway to educational resources, articles, videos and posters. Learn and share knowledge.">
+    <meta name="keywords" content="education, learning, toppers, study material, articles, videos, posters, academic">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Education Toppers Hub">
+    
+    <!-- Permissions Policy -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://educationtoppershub.netlify.app/">
+    <meta property="og:title" content="Education Toppers Hub - Learn & Grow">
+    <meta property="og:description" content="Your gateway to educational resources, articles, videos and posters.">
+    <meta property="og:image" content="https://educationtoppershub.netlify.app/assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://educationtoppershub.netlify.app/">
+    <meta property="twitter:title" content="Education Toppers Hub - Learn & Grow">
+    <meta property="twitter:description" content="Your gateway to educational resources, articles, videos and posters.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://educationtoppershub.netlify.app/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAD/AAD/AAAA/wAAAP8AAP//AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIDMzMzERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERH//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --white: #ffffff;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --bg-light: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #f1c40f;
+        }
+
+        /* Three Line Menu */
+        .three-line-menu {
+            display: flex !important;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .three-line-menu:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .three-line-menu span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .three-line-menu.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .three-line-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .three-line-menu.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Menu Dropdown */
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            background: var(--white);
+            min-width: 240px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 101;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .menu-dropdown.active {
+            display: block;
+            animation: slideDown 0.2s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .menu-dropdown button {
+            width: 100%;
+            padding: 12px 18px;
+            text-align: left;
+            border: none;
+            background: none;
+            color: var(--dark);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .menu-dropdown button:last-child {
+            border-bottom: none;
+        }
+
+        .menu-dropdown button:hover {
+            background-color: #f0f7ff;
+            color: var(--secondary);
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto 1.5rem;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 0.9rem 1.8rem;
+            background: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: var(--dark);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 12px rgba(52,152,219,0.15);
+        }
+
+        .search-bar::placeholder {
+            color: #999;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+            justify-content: center;
+            padding: 0 15px;
+        }
+
+        .category-btn {
+            background: var(--white);
+            border: 1px solid #dee2e6;
+            color: var(--dark);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .category-btn.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+
+        .category-btn:hover:not(.active) {
+            background: #e9ecef;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(145deg, #d4e6f1 0%, #f7f9fc 100%);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: scale(1.02);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 2rem 0 2rem;
+        }
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 0.5rem auto;
+        }
+
+        /* Cards Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        /* Poster cards - Rectangle shape */
+        .poster-card {
+            aspect-ratio: 3/2;
+        }
+
+        .content-card img, 
+        .content-card video,
+        .content-card iframe {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f4f4f4;
+        }
+
+        .content-info {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .content-info h3 {
+            margin-bottom: 0.7rem;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .content-info p {
+            color: #5a6a7a;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Delete button for content */
+        .delete-content-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0;
+        }
+
+        .content-card:hover .delete-content-btn {
+            opacity: 1;
+        }
+
+        .delete-content-btn:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+
+        /* Admin delete button */
+        .admin-delete-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            width: 100%;
+        }
+        
+        .admin-delete-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Video container fix */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: none;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: var(--secondary);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        
+        .progress-text {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.2rem;
+            color: #f1c40f;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-info i {
+            color: #f1c40f;
+            width: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Map link style */
+        .map-link {
+            color: #f1c40f;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #1a2b3c;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.2s;
+            z-index: 99;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background: #2980b9;
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+        .chat-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+        }
+        .chat-icon:hover {
+            transform: scale(1.1);
+            background: #2980b9;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            padding: 1rem 1.8rem;
+            border-radius: 8px;
+            color: white;
+            z-index: 1002;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            animation: slideInRight 0.3s;
+        }
+        .notification.success { background: var(--success); }
+        .notification.error { background: var(--accent); }
+        .notification.info { background: var(--secondary); }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Admin Modal */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #888;
+        }
+        .close-modal:hover { color: #333; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .admin-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            font-weight: 600;
+            position: relative;
+        }
+        .admin-btn:hover { background: #2980b9; }
+        .admin-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #f5f7fa;
+            z-index: 1001;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        .admin-container { max-width: 1200px; margin: 0 auto; }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .admin-title { color: var(--primary); }
+        .logout-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .logout-btn:hover { background: #c0392b; }
+
+        .upload-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .upload-section h3 { margin-bottom: 1.2rem; color: var(--primary); }
+
+        /* Image Upload */
+        .image-upload-container {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            background: #fafafa;
+        }
+        .image-upload-container:hover { border-color: var(--secondary); }
+        .image-upload-container.dragover { border-color: var(--secondary); background: #e8f4fe; }
+        .media-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+        .media-preview img, .media-preview video {
+            max-width: 150px;
+            max-height: 120px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            object-fit: cover;
+        }
+
+        .loading, .no-content { text-align: center; padding: 2rem; color: #666; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="three-line-menu" id="three-line-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="menu-dropdown" id="menu-dropdown">
+                <button id="notice-btn"><i class="fas fa-bullhorn"></i> Notice</button>
+                <button id="query-form-btn"><i class="fas fa-pen"></i> Query Form</button>
+                <button id="download-pdf-btn"><i class="fas fa-download"></i> Download PDF</button>
+                <button id="dark-mode-toggle-menu"><i class="fas fa-moon"></i> Dark Mode</button>
+                <button id="admin-login-btn-menu"><i class="fas fa-lock"></i> Admin Login</button>
+                <button id="home-btn-menu"><i class="fas fa-home"></i> Home</button>
+                <button id="posters-btn-menu"><i class="fas fa-image"></i> Posters</button>
+                <button id="images-btn-menu"><i class="fas fa-image"></i> Images</button>
+                <button id="videos-btn-menu"><i class="fas fa-play-circle"></i> Videos</button>
+                <button id="contact-btn-menu"><i class="fas fa-envelope"></i> Contact</button>
+            </div>
+            <a href="#home" class="logo">Education <span>Toppers Hub</span></a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Empowering Learners, Celebrating Toppers</h1>
+            <p>Access posters, images, and videos — all in one place.</p>
+            <a href="#posters" class="btn">Explore Resources</a>
+        </div>
+    </section>
+
+    <!-- Search & Categories -->
+    <div class="search-container">
+        <input type="text" class="search-bar" id="search-bar" placeholder="Search posters, images, videos...">
+    </div>
+    <div class="categories" id="categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button class="category-btn" data-category="poster">Posters</button>
+        <button class="category-btn" data-category="image">Images</button>
+        <button class="category-btn" data-category="video">Videos</button>
+    </div>
+
+    <!-- Main Content Grids - POSTERS FIRST -->
+    <div class="container">
+        <!-- Posters Section -->
+        <section id="posters">
+            <div class="section-title"><h2>🖼️ Posters</h2></div>
+            <div class="content-grid" id="posters-grid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading posters...</div></div>
+        </section>
+        
+        <!-- Images Section -->
+        <section id="images">
+            <div class="section-title"><h2>📸 Images</h2></div>
+            <div class="content-grid" id="images-grid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading images...</div></div>
+        </section>
+        
+        <!-- Videos Section -->
+        <section id="videos">
+            <div class="section-title"><h2>🎥 Videos</h2></div>
+            <div class="content-grid" id="videos-grid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading videos...</div></div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Muzaffarpur, Atardah Road, Bihar, 842002</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+919304328465">93043 28465</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:toppershub@gmail.com">toppershub@gmail.com</a></p>
+                <p><i class="fas fa-map"></i> <a href="https://maps.app.goo.gl/VDvdoachbV3vDU1KA" target="_blank" class="map-link">View on Google Maps</a></p>
+            </div>
+            <div class="contact-info">
+                <h3>Follow Us</h3>
+                <p><i class="fab fa-instagram"></i> @education_toppers_hub</p>
+                <p><i class="fab fa-facebook"></i> Education Toppers Hub</p>
+                <p><i class="fab fa-youtube"></i> @ETH_learn</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Education Toppers Hub. All rights reserved.</p>
+        <p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Sitemap</a></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <a href="https://faiz786-lada.github.io/ETH-notice/" target="_blank" class="chat-icon" title="Notice Board"><i class="fas fa-bullhorn"></i></a>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <!-- Admin Login Modal -->
+    <div class="admin-modal" id="admin-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <div class="form-group"><label>Email</label><input type="email" id="admin-email" required></div>
+                <div class="form-group"><label>Password</label><input type="password" id="admin-password" required></div>
+                <button type="submit" class="admin-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="admin-panel">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h2 class="admin-title">Admin Panel</h2>
+                <button class="logout-btn" id="logout-btn">Logout</button>
+            </div>
+            
+            <!-- Upload Poster -->
+            <div class="upload-section">
+                <h3>🖼️ Upload Poster</h3>
+                <form id="poster-form">
+                    <div class="form-group"><label>Title</label><input type="text" id="poster-title" required></div>
+                    <div class="form-group"><label>Description</label><textarea id="poster-description" rows="2"></textarea></div>
+                    <div class="form-group"><label>Poster Image</label>
+                        <div class="image-upload-container" id="poster-image-container"><i class="fas fa-cloud-upload-alt"></i> Click or drag poster</div>
+                        <input type="file" id="poster-image-file" accept="image/*" style="display:none;">
+                        <div class="media-preview" id="poster-image-preview"></div>
+                        <input type="hidden" id="poster-image-url">
+                    </div>
+                    <div class="progress-container" id="poster-progress">
+                        <div class="progress-bar" id="poster-progress-bar"></div>
+                        <div class="progress-text" id="poster-progress-text">0%</div>
+                    </div>
+                    <button type="submit" class="admin-btn" id="poster-upload-btn">Upload Poster</button>
+                </form>
+            </div>
+            
+            <!-- Upload Image -->
+            <div class="upload-section">
+                <h3>📸 Upload Image</h3>
+                <form id="image-form">
+                    <div class="form-group"><label>Title</label><input type="text" id="image-title" required></div>
+                    <div class="form-group"><label>Description</label><textarea id="image-description" rows="2"></textarea></div>
+                    <div class="form-group"><label>Image</label>
+                        <div class="image-upload-container" id="image-image-container"><i class="fas fa-cloud-upload-alt"></i> Click or drag image</div>
+                        <input type="file" id="image-image-file" accept="image/*" style="display:none;">
+                        <div class="media-preview" id="image-image-preview"></div>
+                        <input type="hidden" id="image-image-url">
+                    </div>
+                    <div class="progress-container" id="image-progress">
+                        <div class="progress-bar" id="image-progress-bar"></div>
+                        <div class="progress-text" id="image-progress-text">0%</div>
+                    </div>
+                    <button type="submit" class="admin-btn" id="image-upload-btn">Upload Image</button>
+                </form>
+            </div>
+            
+            <!-- Upload Video -->
+            <div class="upload-section">
+                <h3>🎬 Upload Video</h3>
+                <form id="video-form">
+                    <div class="form-group"><label>Title</label><input type="text" id="video-title" required></div>
+                    <div class="form-group"><label>Description</label><textarea id="video-description" rows="2"></textarea></div>
+                    <div class="form-group"><label>Video URL (YouTube/Vimeo/MP4)</label>
+                        <input type="url" id="video-url" placeholder="https://..." required>
+                    </div>
+                    <div class="progress-container" id="video-progress">
+                        <div class="progress-bar" id="video-progress-bar"></div>
+                        <div class="progress-text" id="video-progress-text">0%</div>
+                    </div>
+                    <button type="submit" class="admin-btn" id="video-upload-btn">Upload Video</button>
+                </form>
+            </div>
+            
+            <!-- Manage Content - All items with delete buttons -->
+            <div class="upload-section">
+                <h3>📋 Manage Content</h3>
+                
+                <h4>Posters</h4>
+                <div class="content-grid" id="admin-posters-grid"></div>
+                
+                <h4>Images</h4>
+                <div class="content-grid" id="admin-images-grid"></div>
+                
+                <h4>Videos</h4>
+                <div class="content-grid" id="admin-videos-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCzCp_EGGmSolCSy8iQNrQAE-vGO8vTKIo",
+            authDomain: "education-toppers-hub-4d045.firebaseapp.com",
+            databaseURL: "https://education-toppers-hub-4d045-default-rtdb.firebaseio.com",
+            projectId: "education-toppers-hub-4d045",
+            storageBucket: "education-toppers-hub-4d045.firebasestorage.app",
+            messagingSenderId: "1065320525597",
+            appId: "1:1065320525597:web:ca166ff0d6e257492f3bf4",
+            measurementId: "G-QTF6FHGEFZ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Make Firebase functions available globally
+        window.db = db;
+        window.collection = collection;
+        window.addDoc = addDoc;
+        window.getDocs = getDocs;
+        window.deleteDoc = deleteDoc;
+        window.doc = doc;
+        window.query = query;
+        window.orderBy = orderBy;
+        window.serverTimestamp = serverTimestamp;
+        
+        console.log("✅ Firebase initialized");
+    </script>
+
+    <!-- Main Script -->
+    <script>
+        (function() {
+            // Hardcoded admin credentials
+            const ADMIN_EMAIL = 'faizbabu1212@gmail.com';
+            const ADMIN_PASSWORD = '9955188086faiz';
+
+            // DOM elements
+            const threeLineMenu = document.getElementById('three-line-menu');
+            const menuDropdown = document.getElementById('menu-dropdown');
+            const adminModal = document.getElementById('admin-modal');
+            const closeModal = document.getElementById('close-modal');
+            const adminLoginForm = document.getElementById('admin-login-form');
+            const adminPanel = document.getElementById('admin-panel');
+            const logoutBtn = document.getElementById('logout-btn');
+            const notification = document.getElementById('notification');
+            const searchBar = document.getElementById('search-bar');
+            const backToTop = document.getElementById('back-to-top');
+            const categories = document.getElementById('categories');
+
+            // Grids
+            const imagesGrid = document.getElementById('images-grid');
+            const videosGrid = document.getElementById('videos-grid');
+            const postersGrid = document.getElementById('posters-grid');
+            const adminImagesGrid = document.getElementById('admin-images-grid');
+            const adminVideosGrid = document.getElementById('admin-videos-grid');
+            const adminPostersGrid = document.getElementById('admin-posters-grid');
+
+            // Forms
+            const imageForm = document.getElementById('image-form');
+            const videoForm = document.getElementById('video-form');
+            const posterForm = document.getElementById('poster-form');
+
+            // Upload buttons
+            const posterUploadBtn = document.getElementById('poster-upload-btn');
+            const imageUploadBtn = document.getElementById('image-upload-btn');
+            const videoUploadBtn = document.getElementById('video-upload-btn');
+
+            // Progress elements
+            const posterProgress = document.getElementById('poster-progress');
+            const posterProgressBar = document.getElementById('poster-progress-bar');
+            const posterProgressText = document.getElementById('poster-progress-text');
+            
+            const imageProgress = document.getElementById('image-progress');
+            const imageProgressBar = document.getElementById('image-progress-bar');
+            const imageProgressText = document.getElementById('image-progress-text');
+            
+            const videoProgress = document.getElementById('video-progress');
+            const videoProgressBar = document.getElementById('video-progress-bar');
+            const videoProgressText = document.getElementById('video-progress-text');
+
+            // Upload containers for images
+            const imageImgContainer = document.getElementById('image-image-container');
+            const imageImgFile = document.getElementById('image-image-file');
+            const imageImgPreview = document.getElementById('image-image-preview');
+            const imageImgUrl = document.getElementById('image-image-url');
+
+            // Upload containers for posters
+            const posterImgContainer = document.getElementById('poster-image-container');
+            const posterImgFile = document.getElementById('poster-image-file');
+            const posterImgPreview = document.getElementById('poster-image-preview');
+            const posterImgUrl = document.getElementById('poster-image-url');
+
+            // Data arrays
+            let images = [];
+            let videos = [];
+            let posters = [];
+
+            // Helper functions
+            function showNotification(msg, type) {
+                notification.textContent = msg;
+                notification.className = `notification ${type}`;
+                notification.style.display = 'block';
+                setTimeout(() => notification.style.display = 'none', 3000);
+            }
+
+            async function loadAll() {
+                await loadImages(); 
+                await loadVideos(); 
+                await loadPosters();
+                renderPosters(); 
+                renderImages(); 
+                renderVideos();
+                if (adminPanel.style.display === 'block') { 
+                    renderAdminPosters(); 
+                    renderAdminImages(); 
+                    renderAdminVideos(); 
+                }
+            }
+
+            async function loadImages() {
+                try {
+                    const q = query(collection(db, 'images'), orderBy('timestamp', 'desc'));
+                    const snap = await getDocs(q);
+                    images = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+                    console.log('Images loaded:', images.length);
+                } catch (e) { 
+                    console.error('Error loading images:', e); 
+                    images = []; 
+                }
+            }
+            
+            async function loadVideos() {
+                try {
+                    const q = query(collection(db, 'videos'), orderBy('timestamp', 'desc'));
+                    const snap = await getDocs(q);
+                    videos = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+                    console.log('Videos loaded:', videos.length);
+                } catch (e) { 
+                    console.error('Error loading videos:', e); 
+                    videos = []; 
+                }
+            }
+            
+            async function loadPosters() {
+                try {
+                    const q = query(collection(db, 'posters'), orderBy('timestamp', 'desc'));
+                    const snap = await getDocs(q);
+                    posters = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+                    console.log('Posters loaded:', posters.length);
+                } catch (e) { 
+                    console.error('Error loading posters:', e); 
+                    posters = []; 
+                }
+            }
+
+            // Delete function for main content
+            async function deleteContent(type, id) {
+                if (!confirm(`Delete this ${type}?`)) return;
+                
+                try {
+                    await deleteDoc(doc(db, type + 's', id));
+                    showNotification(`${type} deleted successfully`, 'success');
+                    await loadAll();
+                } catch (err) {
+                    console.error('Delete error:', err);
+                    showNotification(`Error deleting ${type}`, 'error');
+                }
+            }
+
+            function renderImages(filtered = images) {
+                imagesGrid.innerHTML = '';
+                if (!filtered.length) { 
+                    imagesGrid.innerHTML = '<div class="no-content">No images</div>'; 
+                    return; 
+                }
+                filtered.forEach(a => {
+                    const card = document.createElement('div'); 
+                    card.className = 'content-card';
+                    
+                    // Add delete button for admin
+                    const deleteBtn = adminPanel.style.display === 'block' ? 
+                        `<button class="delete-content-btn" onclick="window.deleteContent('image', '${a.id}')"><i class="fas fa-trash"></i></button>` : '';
+                    
+                    card.innerHTML = `${deleteBtn}<img src="${a.imageUrl || 'https://via.placeholder.com/300x200?text=Image'}" alt="${a.title}">
+                        <div class="content-info"><h3>${a.title}</h3><p>${a.description || ''}</p></div>`;
+                    imagesGrid.appendChild(card);
+                });
+            }
+            
+            function renderVideos(filtered = videos) {
+                videosGrid.innerHTML = '';
+                if (!filtered.length) { 
+                    videosGrid.innerHTML = '<div class="no-content">No videos</div>'; 
+                    return; 
+                }
+                filtered.forEach(v => {
+                    const card = document.createElement('div'); 
+                    card.className = 'content-card';
+                    
+                    // Add delete button for admin
+                    const deleteBtn = adminPanel.style.display === 'block' ? 
+                        `<button class="delete-content-btn" onclick="window.deleteContent('video', '${v.id}')"><i class="fas fa-trash"></i></button>` : '';
+                    
+                    let videoHtml = '';
+                    if (v.videoUrl) {
+                        if (v.videoUrl.includes('youtube') || v.videoUrl.includes('youtu.be')) {
+                            // YouTube URL
+                            let videoId = '';
+                            if (v.videoUrl.includes('youtube.com/watch?v=')) {
+                                videoId = v.videoUrl.split('v=')[1]?.split('&')[0];
+                            } else if (v.videoUrl.includes('youtu.be/')) {
+                                videoId = v.videoUrl.split('youtu.be/')[1]?.split('?')[0];
+                            }
+                            
+                            if (videoId) {
+                                videoHtml = `<div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+                                </div>`;
+                            } else {
+                                videoHtml = `<div class="video-container">
+                                    <video src="${v.videoUrl}" controls></video>
+                                </div>`;
+                            }
+                        } else {
+                            // Direct video file
+                            videoHtml = `<div class="video-container">
+                                <video src="${v.videoUrl}" controls></video>
+                            </div>`;
+                        }
+                    }
+                    
+                    card.innerHTML = `${deleteBtn}${videoHtml}<div class="content-info"><h3>${v.title}</h3><p>${v.description || ''}</p></div>`;
+                    videosGrid.appendChild(card);
+                });
+            }
+            
+            function renderPosters(filtered = posters) {
+                postersGrid.innerHTML = '';
+                if (!filtered.length) { 
+                    postersGrid.innerHTML = '<div class="no-content">No posters</div>'; 
+                    return; 
+                }
+                filtered.forEach(p => {
+                    const card = document.createElement('div'); 
+                    card.className = 'content-card poster-card';
+                    
+                    // Add delete button for admin
+                    const deleteBtn = adminPanel.style.display === 'block' ? 
+                        `<button class="delete-content-btn" onclick="window.deleteContent('poster', '${p.id}')"><i class="fas fa-trash"></i></button>` : '';
+                    
+                    card.innerHTML = `${deleteBtn}<img src="${p.imageUrl || 'https://via.placeholder.com/300x200?text=Poster'}" alt="${p.title}"><div class="content-info"><h3>${p.title}</h3><p>${p.description || ''}</p></div>`;
+                    postersGrid.appendChild(card);
+                });
+            }
+
+            // Admin panel render functions
+            function renderAdminImages() {
+                if (!adminImagesGrid) return;
+                adminImagesGrid.innerHTML = images.map(a => `
+                    <div class="content-card" style="aspect-ratio: auto;">
+                        <img src="${a.imageUrl}" style="height:100px; object-fit: cover;">
+                        <div class="content-info">
+                            <h4>${a.title}</h4>
+                            <button class="admin-delete-btn" onclick="window.deleteContent('image', '${a.id}')">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            function renderAdminVideos() {
+                if (!adminVideosGrid) return;
+                adminVideosGrid.innerHTML = videos.map(v => `
+                    <div class="content-card" style="aspect-ratio: auto;">
+                        <div class="content-info">
+                            <h4>${v.title}</h4>
+                            <p style="font-size:0.8rem; color:#666;">${v.videoUrl.substring(0,30)}...</p>
+                            <button class="admin-delete-btn" onclick="window.deleteContent('video', '${v.id}')">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            function renderAdminPosters() {
+                if (!adminPostersGrid) return;
+                adminPostersGrid.innerHTML = posters.map(p => `
+                    <div class="content-card" style="aspect-ratio: auto;">
+                        <img src="${p.imageUrl}" style="height:100px; object-fit: cover;">
+                        <div class="content-info">
+                            <h4>${p.title}</h4>
+                            <button class="admin-delete-btn" onclick="window.deleteContent('poster', '${p.id}')">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Make delete function globally available
+            window.deleteContent = deleteContent;
+
+            // Image to Base64 with progress
+            function setupImageUpload(container, fileInput, previewEl, hiddenInput, progressBar, progressText, progressContainer) {
+                if (!container) return;
+                
+                container.addEventListener('click', () => fileInput.click());
+                
+                container.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    container.classList.add('dragover');
+                });
+                
+                container.addEventListener('dragleave', () => {
+                    container.classList.remove('dragover');
+                });
+                
+                container.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    container.classList.remove('dragover');
+                    if (e.dataTransfer.files?.[0]) {
+                        handleFileSelect(e.dataTransfer.files[0], previewEl, hiddenInput, progressBar, progressText, progressContainer);
+                    }
+                });
+                
+                fileInput.addEventListener('change', function() {
+                    if (this.files?.[0]) {
+                        handleFileSelect(this.files[0], previewEl, hiddenInput, progressBar, progressText, progressContainer);
+                    }
+                });
+            }
+            
+            function handleFileSelect(file, previewEl, hiddenInput, progressBar, progressText, progressContainer) {
+                const reader = new FileReader();
+                
+                // Show progress
+                progressContainer.style.display = 'block';
+                progressBar.style.width = '0%';
+                progressText.textContent = '0%';
+                
+                reader.onloadstart = () => {
+                    progressBar.style.width = '30%';
+                    progressText.textContent = '30%';
+                };
+                
+                reader.onprogress = (e) => {
+                    if (e.lengthComputable) {
+                        const percent = (e.loaded / e.total) * 70 + 30;
+                        progressBar.style.width = percent + '%';
+                        progressText.textContent = Math.round(percent) + '%';
+                    }
+                };
+                
+                reader.onload = e => { 
+                    progressBar.style.width = '100%';
+                    progressText.textContent = '100%';
+                    previewEl.innerHTML = `<img src="${e.target.result}" style="max-width:150px; max-height:120px; object-fit: cover;">`; 
+                    hiddenInput.value = e.target.result; 
+                    
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                    }, 500);
+                };
+                
+                reader.onerror = () => {
+                    showNotification('Error reading file', 'error');
+                    progressContainer.style.display = 'none';
+                };
+                
+                reader.readAsDataURL(file);
+            }
+
+            // Setup image uploads with progress
+            setupImageUpload(
+                posterImgContainer, posterImgFile, posterImgPreview, posterImgUrl,
+                posterProgressBar, posterProgressText, posterProgress
+            );
+            
+            setupImageUpload(
+                imageImgContainer, imageImgFile, imageImgPreview, imageImgUrl,
+                imageProgressBar, imageProgressText, imageProgress
+            );
+
+            // Menu toggle
+            threeLineMenu.addEventListener('click', function() { 
+                this.classList.toggle('active'); 
+                menuDropdown.classList.toggle('active'); 
+            });
+            
+            document.addEventListener('click', (e) => { 
+                if (!threeLineMenu.contains(e.target) && !menuDropdown.contains(e.target)) { 
+                    threeLineMenu.classList.remove('active'); 
+                    menuDropdown.classList.remove('active'); 
+                } 
+            });
+
+            // Menu buttons
+            document.getElementById('notice-btn')?.addEventListener('click', () => { 
+                window.open('https://faiz786-lada.github.io/ETH-notice/', '_blank'); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('query-form-btn')?.addEventListener('click', () => { 
+                window.open('https://faiz786-lada.github.io/ETH-query-form/', '_blank'); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('download-pdf-btn')?.addEventListener('click', () => { 
+                window.open('https://faiz786-lada.github.io/Pdf/', '_blank'); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('dark-mode-toggle-menu')?.addEventListener('click', () => { 
+                document.body.classList.toggle('dark-mode'); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('admin-login-btn-menu')?.addEventListener('click', () => { 
+                adminModal.style.display = 'flex'; 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('home-btn-menu')?.addEventListener('click', () => { 
+                window.scrollTo({top:0,behavior:'smooth'}); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('posters-btn-menu')?.addEventListener('click', () => { 
+                document.getElementById('posters').scrollIntoView({behavior:'smooth'}); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('images-btn-menu')?.addEventListener('click', () => { 
+                document.getElementById('images').scrollIntoView({behavior:'smooth'}); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('videos-btn-menu')?.addEventListener('click', () => { 
+                document.getElementById('videos').scrollIntoView({behavior:'smooth'}); 
+                menuDropdown.classList.remove('active'); 
+            });
+            
+            document.getElementById('contact-btn-menu')?.addEventListener('click', () => { 
+                document.getElementById('contact').scrollIntoView({behavior:'smooth'}); 
+                menuDropdown.classList.remove('active'); 
+            });
+
+            window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 300));
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            closeModal.addEventListener('click', () => adminModal.style.display = 'none');
+            window.addEventListener('click', (e) => { if (e.target === adminModal) adminModal.style.display = 'none'; });
+
+            // Admin login
+            adminLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('admin-email').value;
+                const pwd = document.getElementById('admin-password').value;
+                
+                if (email === ADMIN_EMAIL && pwd === ADMIN_PASSWORD) {
+                    adminModal.style.display = 'none';
+                    adminPanel.style.display = 'block';
+                    showNotification('Logged in as Admin', 'success');
+                    loadAll();
+                } else {
+                    showNotification('Invalid email or password!', 'error');
+                }
+            });
+
+            logoutBtn.addEventListener('click', () => { 
+                adminPanel.style.display = 'none'; 
+                showNotification('Logged out', 'success');
+                // Reload to remove delete buttons
+                loadAll();
+            });
+
+            // Upload image
+            imageForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const title = document.getElementById('image-title').value;
+                const description = document.getElementById('image-description').value;
+                const imageUrl = imageImgUrl.value;
+                
+                if (!imageUrl) {
+                    showNotification('Please select an image', 'error');
+                    return;
+                }
+                
+                imageUploadBtn.disabled = true;
+                imageProgress.style.display = 'block';
+                imageProgressBar.style.width = '50%';
+                imageProgressText.textContent = '50%';
+                
+                try { 
+                    const data = { 
+                        title, 
+                        description, 
+                        imageUrl, 
+                        timestamp: serverTimestamp()
+                    };
+                    
+                    await addDoc(collection(db, 'images'), data); 
+                    
+                    imageProgressBar.style.width = '100%';
+                    imageProgressText.textContent = '100%';
+                    
+                    showNotification('Image uploaded successfully', 'success'); 
+                    imageForm.reset(); 
+                    imageImgPreview.innerHTML=''; 
+                    imageImgUrl.value=''; 
+                    await loadAll(); 
+                    
+                    setTimeout(() => {
+                        imageProgress.style.display = 'none';
+                        imageProgressBar.style.width = '0%';
+                        imageProgressText.textContent = '0%';
+                        imageUploadBtn.disabled = false;
+                    }, 1000);
+                    
+                } catch (err) { 
+                    console.error('Upload error:', err);
+                    showNotification('Error uploading image: ' + err.message, 'error'); 
+                    imageProgress.style.display = 'none';
+                    imageUploadBtn.disabled = false;
+                }
+            });
+
+            // Upload video - Fixed
+            videoForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const title = document.getElementById('video-title').value;
+                const description = document.getElementById('video-description').value;
+                const videoUrl = document.getElementById('video-url').value;
+                
+                if (!videoUrl) {
+                    showNotification('Please enter video URL', 'error');
+                    return;
+                }
+                
+                videoUploadBtn.disabled = true;
+                videoProgress.style.display = 'block';
+                videoProgressBar.style.width = '50%';
+                videoProgressText.textContent = '50%';
+                
+                try { 
+                    const data = { 
+                        title, 
+                        description, 
+                        videoUrl, 
+                        timestamp: serverTimestamp()
+                    };
+                    
+                    await addDoc(collection(db, 'videos'), data); 
+                    
+                    videoProgressBar.style.width = '100%';
+                    videoProgressText.textContent = '100%';
+                    
+                    showNotification('Video uploaded successfully', 'success'); 
+                    videoForm.reset(); 
+                    await loadAll(); 
+                    
+                    setTimeout(() => {
+                        videoProgress.style.display = 'none';
+                        videoProgressBar.style.width = '0%';
+                        videoProgressText.textContent = '0%';
+                        videoUploadBtn.disabled = false;
+                    }, 1000);
+                    
+                } catch (err) { 
+                    console.error('Upload error:', err);
+                    showNotification('Error uploading video: ' + err.message, 'error'); 
+                    videoProgress.style.display = 'none';
+                    videoUploadBtn.disabled = false;
+                }
+            });
+
+            // Upload poster
+            posterForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const title = document.getElementById('poster-title').value;
+                const description = document.getElementById('poster-description').value;
+                const imageUrl = posterImgUrl.value;
+                
+                if (!imageUrl) {
+                    showNotification('Please select a poster image', 'error');
+                    return;
+                }
+                
+                posterUploadBtn.disabled = true;
+                posterProgress.style.display = 'block';
+                posterProgressBar.style.width = '50%';
+                posterProgressText.textContent = '50%';
+                
+                try { 
+                    const data = { 
+                        title, 
+                        description, 
+                        imageUrl, 
+                        timestamp: serverTimestamp()
+                    };
+                    
+                    await addDoc(collection(db, 'posters'), data); 
+                    
+                    posterProgressBar.style.width = '100%';
+                    posterProgressText.textContent = '100%';
+                    
+                    showNotification('Poster uploaded successfully', 'success'); 
+                    posterForm.reset(); 
+                    posterImgPreview.innerHTML=''; 
+                    posterImgUrl.value=''; 
+                    await loadAll(); 
+                    
+                    setTimeout(() => {
+                        posterProgress.style.display = 'none';
+                        posterProgressBar.style.width = '0%';
+                        posterProgressText.textContent = '0%';
+                        posterUploadBtn.disabled = false;
+                    }, 1000);
+                    
+                } catch (err) { 
+                    console.error('Upload error:', err);
+                    showNotification('Error uploading poster: ' + err.message, 'error'); 
+                    posterProgress.style.display = 'none';
+                    posterUploadBtn.disabled = false;
+                }
+            });
+
+            // Search
+            searchBar.addEventListener('input', function() {
+                let term = this.value.toLowerCase();
+                if (!term) { 
+                    renderPosters(); 
+                    renderImages(); 
+                    renderVideos(); 
+                    return; 
+                }
+                renderPosters(posters.filter(p => p.title.toLowerCase().includes(term) || (p.description && p.description.toLowerCase().includes(term))));
+                renderImages(images.filter(a => a.title.toLowerCase().includes(term) || (a.description && a.description.toLowerCase().includes(term))));
+                renderVideos(videos.filter(v => v.title.toLowerCase().includes(term) || (v.description && v.description.toLowerCase().includes(term))));
+            });
+
+            // Categories filter
+            categories.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('category-btn')) return;
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                let cat = e.target.dataset.category;
+                if (cat === 'all') { 
+                    renderPosters(); 
+                    renderImages(); 
+                    renderVideos(); 
+                } else if (cat === 'poster') {
+                    renderPosters();
+                    imagesGrid.innerHTML = ''; 
+                    videosGrid.innerHTML = ''; 
+                } else if (cat === 'image') {
+                    renderImages();
+                    postersGrid.innerHTML = ''; 
+                    videosGrid.innerHTML = ''; 
+                } else if (cat === 'video') {
+                    renderVideos();
+                    postersGrid.innerHTML = ''; 
+                    imagesGrid.innerHTML = ''; 
+                }
+            });
+
+            // Initial load
+            loadAll();
+        })();
+    </script>
+</body>
+</html>
