@@ -218,7 +218,7 @@
             top: 100%;
             left: 20px;
             background: var(--white);
-            min-width: 240px;
+            min-width: 260px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             z-index: 101;
             border-radius: 10px;
@@ -871,6 +871,8 @@
                 <button id="notice-btn"><i class="fas fa-copy"></i> admission form</button>
                 <button id="query-form-btn"><i class="fas fa-pen"></i> Query Form</button>
                 <button id="download-pdf-btn"><i class="fas fa-download"></i> Download PDF</button>
+                <!-- New Attendance Option Added -->
+                <button id="attendance-btn"><i class="fas fa-calendar-check"></i> Attendance</button>
                 <button id="dark-mode-toggle-menu"><i class="fas fa-moon"></i> Dark Mode</button>
                 <button id="admin-login-btn-menu"><i class="fas fa-lock"></i> Admin Login</button>
                 <button id="home-btn-menu"><i class="fas fa-home"></i> Home</button>
@@ -1568,6 +1570,12 @@
             
             document.getElementById('download-pdf-btn')?.addEventListener('click', () => { 
                 window.open('https://faiz786-lada.github.io/Pdf/', '_blank'); 
+                menuDropdown.classList.remove('active'); 
+            });
+
+            // New Attendance Button Event Listener
+            document.getElementById('attendance-btn')?.addEventListener('click', () => { 
+                window.open('https://faiz786-lada.github.io/ETH-attendance/', '_blank'); 
                 menuDropdown.classList.remove('active'); 
             });
             
