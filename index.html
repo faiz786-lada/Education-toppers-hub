@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education Toppers Hub - Learn & Grow</title>
-    
+
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="zykTbQkdf5dPPgpVTfiYRXbbOxgNHy7e6_BS-RwxM08" />
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Education Toppers Hub – your gateway to educational resources, articles, videos and posters. Learn and share knowledge.">
     <meta name="keywords" content="education, learning, toppers, study material, articles, videos, posters, academic">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Education Toppers Hub">
-    
-    <!-- Permissions Policy -->
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    
-    <!-- Open Graph / Facebook -->
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://educationtoppershub.netlify.app/">
     <meta property="og:title" content="Education Toppers Hub - Learn & Grow">
@@ -26,35 +24,41 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Education Toppers Hub">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://educationtoppershub.netlify.app/">
     <meta name="twitter:title" content="Education Toppers Hub - Learn & Grow">
     <meta name="twitter:description" content="Your gateway to educational resources, articles, videos and posters.">
     <meta name="twitter:image" content="https://educationtoppershub.netlify.app/assets/og-image.jpg">
-    
-    <!-- Canonical URL -->
+
     <link rel="canonical" href="https://educationtoppershub.netlify.app/">
-    
-    <!-- Favicon - Complete Set -->
+
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#2c3e50">
-    <meta name="msapplication-TileImage" content="/mstile-150x150.png">
-    <meta name="theme-color" content="#2c3e50">
-    
-    <!-- Preconnect for external resources -->
+    <meta name="msapplication-TileColor" content="#1a2744">
+    <meta name="theme-color" content="#1a2744">
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.youtube.com" crossorigin>
-    <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin>
-    
-    <!-- Structured Data / Schema.org for Rich Results -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -84,68 +88,75 @@
       }
     }
     </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": "Education Toppers Hub - Introduction",
-      "description": "Welcome to Education Toppers Hub - Your gateway to educational resources, articles, videos and posters.",
-      "thumbnailUrl": "https://educationtoppershub.netlify.app/assets/og-image.jpg",
-      "uploadDate": "2026-02-19",
-      "contentUrl": "https://educationtoppershub.netlify.app/videos/intro.mp4",
-      "embedUrl": "https://www.youtube.com/embed/zryGpo3FQZY",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Education Toppers Hub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://educationtoppershub.netlify.app/logo.png"
-        }
-      }
-    }
-    </script>
-    
+
     <style>
+        /* ===== CSS Variables ===== */
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --primary: #1a2744;
+            --primary-light: #243360;
+            --secondary: #2563eb;
+            --secondary-light: #3b82f6;
+            --accent: #f59e0b;
+            --accent-red: #ef4444;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --purple: #8b5cf6;
+            --light: #f1f5f9;
             --white: #ffffff;
-            --success: #2ecc71;
-            --warning: #f39c12;
-            --bg-light: #f8f9fa;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--bg-light);
-            color: var(--dark);
-            line-height: 1.6;
-            min-height: 100vh;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --card-shadow-hover: 0 20px 40px -10px rgba(0,0,0,0.15);
+            --radius: 14px;
+            --radius-sm: 8px;
+            --transition: 0.2s ease;
+            --font-main: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --header-h: 64px;
         }
 
-        /* Header */
+        /* Dark Mode */
+        body.dark-mode {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --light: #0f172a;
+            --white: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+            background: #0f172a;
+        }
+
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background var(--transition), color var(--transition);
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; }
+
+        /* ===== Header ===== */
         header {
             background: var(--primary);
-            color: var(--white);
-            padding: 0.8rem 0;
+            height: var(--header-h);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
         }
 
         .header-container {
             max-width: 1400px;
+            height: 100%;
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
@@ -154,1707 +165,2192 @@
             position: relative;
         }
 
+        /* Left: hamburger */
+        .three-line-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: background var(--transition);
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .three-line-menu:hover { background: rgba(255,255,255,0.2); }
+        .three-line-menu span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s ease; display: block; }
+        .three-line-menu.active span:nth-child(1) { transform: rotate(-45deg) translate(-4px, 5px); }
+        .three-line-menu.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .three-line-menu.active span:nth-child(3) { transform: rotate(45deg) translate(-4px, -5px); }
+
+        /* Center: logo text */
         .logo {
-            font-size: 1.6rem;
+            font-family: var(--font-main);
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--white);
-            text-decoration: none;
-            white-space: nowrap;
             display: flex;
             align-items: center;
             gap: 10px;
+            white-space: nowrap;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
+        .logo img { height: 34px; width: auto; border-radius: 6px; object-fit: contain; }
+        .logo span { color: var(--accent); }
 
-        .logo img {
-            height: 40px;
-            width: auto;
+        /* Right: website logo (top-right corner) */
+        .header-logo-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .website-logo-img {
+            height: 44px;
+            width: 44px;
+            object-fit: contain;
             border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            padding: 3px;
+            transition: border-color var(--transition), transform var(--transition);
         }
-
-        .logo span {
-            color: #f1c40f;
-        }
-
-        /* Three Line Menu */
-        .three-line-menu {
-            display: flex !important;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 8px;
-            background: rgba(255,255,255,0.2);
+        .website-logo-img:hover { border-color: var(--accent); transform: scale(1.05); }
+        .website-logo-placeholder {
+            height: 44px;
+            width: 44px;
             border-radius: 8px;
-            transition: background 0.3s;
-        }
-
-        .three-line-menu:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .three-line-menu span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--white);
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .three-line-menu.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .three-line-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .three-line-menu.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+            border: 2px dashed rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.35);
+            font-size: 1.2rem;
         }
 
         /* Menu Dropdown */
         .menu-dropdown {
             display: none;
             position: absolute;
-            top: 100%;
-            left: 20px;
+            top: calc(100% + 8px);
+            left: 16px;
             background: var(--white);
-            min-width: 260px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            z-index: 101;
-            border-radius: 10px;
+            min-width: 250px;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+            z-index: 200;
+            border-radius: var(--radius);
             overflow: hidden;
-            border: 1px solid #eee;
+            border: 1px solid var(--border);
         }
-
-        .menu-dropdown.active {
-            display: block;
-            animation: slideDown 0.2s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        .menu-dropdown.active { display: block; animation: slideDown 0.2s ease; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .menu-dropdown button {
-            width: 100%;
-            padding: 12px 18px;
-            text-align: left;
-            border: none;
-            background: none;
-            color: var(--dark);
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            border-bottom: 1px solid #f0f0f0;
+            width: 100%; padding: 11px 16px;
+            text-align: left; border: none;
+            background: none; color: var(--text);
+            font-size: 0.92rem; font-family: var(--font-body);
+            transition: background var(--transition), color var(--transition);
+            display: flex; align-items: center; gap: 10px;
+            border-bottom: 1px solid var(--border);
         }
+        .menu-dropdown button:last-child { border-bottom: none; }
+        .menu-dropdown button:hover { background: #eff6ff; color: var(--secondary); }
+        .menu-dropdown button i { width: 18px; color: var(--secondary); }
 
-        .menu-dropdown button:last-child {
-            border-bottom: none;
-        }
-
-        .menu-dropdown button:hover {
-            background-color: #f0f7ff;
-            color: var(--secondary);
-        }
-
-        /* Search Bar */
-        .search-container {
-            max-width: 600px;
-            margin: 2rem auto 1.5rem;
-            position: relative;
-            padding: 0 15px;
-        }
-
-        .search-bar {
-            width: 100%;
-            padding: 0.9rem 1.8rem;
-            background: var(--white);
-            border: 1px solid #ddd;
-            border-radius: 50px;
-            font-size: 1rem;
-            color: var(--dark);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.2s;
-        }
-
-        .search-bar:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 4px 12px rgba(52,152,219,0.15);
-        }
-
-        .search-bar::placeholder {
-            color: #999;
-        }
-
-        /* Categories */
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin: 1.5rem 0;
-            justify-content: center;
-            padding: 0 15px;
-        }
-
-        .category-btn {
-            background: var(--white);
-            border: 1px solid #dee2e6;
-            color: var(--dark);
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-weight: 500;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .category-btn.active {
-            background: var(--secondary);
-            border-color: var(--secondary);
-            color: white;
-        }
-
-        .category-btn:hover:not(.active) {
-            background: #e9ecef;
-        }
-
-        /* Hero Section */
+        /* ===== Hero ===== */
         .hero {
-            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e3a8a 100%);
+            padding: 4rem 1.5rem;
             text-align: center;
-            background: linear-gradient(145deg, #d4e6f1 0%, #f7f9fc 100%);
-            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
         }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(37,99,235,0.3) 0%, transparent 60%);
+            pointer-events: none;
         }
-
+        .hero-content { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4);
+            color: var(--accent); padding: 5px 14px; border-radius: 30px;
+            font-size: 0.82rem; font-weight: 600; margin-bottom: 1.2rem;
+            font-family: var(--font-main); letter-spacing: 0.3px;
+        }
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+            font-family: var(--font-main);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800; color: var(--white);
+            margin-bottom: 1rem; line-height: 1.2;
         }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: #4a5568;
-        }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 2rem; }
 
         .btn {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s, transform 0.1s;
-            border: none;
-            cursor: pointer;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--secondary); color: white;
+            padding: 0.75rem 1.8rem; border-radius: 50px;
+            font-family: var(--font-main); font-weight: 600;
+            font-size: 0.95rem; border: none;
+            transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+            box-shadow: 0 4px 14px rgba(37,99,235,0.35);
         }
+        .btn:hover { background: var(--secondary-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.4); }
+        .btn-outline {
+            background: transparent; border: 2px solid rgba(255,255,255,0.5);
+            color: white; box-shadow: none; margin-left: 0.5rem;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; box-shadow: none; }
 
-        .btn:hover {
-            background: #2980b9;
-            transform: scale(1.02);
-        }
+        /* ===== Stats Bar ===== */
+        .stats-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 0.9rem 1rem; }
+        .stats-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+        .stat-item { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text-muted); }
+        .stat-item strong { color: var(--secondary); font-family: var(--font-main); font-size: 1.1rem; }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 20px;
+        /* ===== Search & Filter ===== */
+        .search-filter-area { max-width: 1200px; margin: 2rem auto 0; padding: 0 20px; }
+        .search-container { position: relative; margin-bottom: 1rem; }
+        .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.95rem; pointer-events: none; }
+        .search-bar {
+            width: 100%; padding: 0.85rem 1rem 0.85rem 2.8rem;
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: 50px; font-size: 0.95rem;
+            font-family: var(--font-body); color: var(--text);
+            box-shadow: var(--card-shadow);
+            transition: border-color var(--transition), box-shadow var(--transition);
         }
+        .search-bar:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+        .search-bar::placeholder { color: var(--text-muted); }
+        .search-clear {
+            position: absolute; right: 14px; top: 50%;
+            transform: translateY(-50%);
+            background: none; border: none; color: var(--text-muted);
+            font-size: 0.9rem; cursor: pointer; display: none; padding: 4px;
+        }
+        .categories { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; padding: 0.5rem 0; }
+        .category-btn {
+            background: var(--white); border: 1px solid var(--border);
+            color: var(--text-muted); padding: 0.45rem 1.2rem;
+            border-radius: 30px; font-size: 0.875rem; font-weight: 500;
+            font-family: var(--font-main); transition: all var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+        .category-btn:hover:not(.active) { border-color: var(--secondary); color: var(--secondary); background: #eff6ff; }
+        .category-btn.active { background: var(--secondary); border-color: var(--secondary); color: white; box-shadow: 0 4px 12px rgba(37,99,235,0.25); }
+        .category-btn i { margin-right: 5px; }
 
-        .section-title {
-            text-align: center;
-            margin: 2rem 0 2rem;
-        }
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 3px;
-            background: var(--secondary);
-            margin: 0.5rem auto;
-        }
+        /* ===== Container ===== */
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 20px; }
 
-        /* Cards Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+        .section-title { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+        .section-title h2 { font-family: var(--font-main); font-size: 1.5rem; font-weight: 700; color: var(--text); }
+        .section-line { flex: 1; height: 2px; background: linear-gradient(to right, var(--secondary), transparent); border-radius: 2px; }
 
+        /* ===== Cards Grid ===== */
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
         .content-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid #eee;
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.3s ease forwards;
+            background: var(--white); border-radius: var(--radius);
+            overflow: hidden; box-shadow: var(--card-shadow);
+            border: 1px solid var(--border); position: relative;
+            transition: transform var(--transition), box-shadow var(--transition);
+            animation: fadeInUp 0.35s ease both;
         }
+        .content-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .card-img-wrap { overflow: hidden; min-height: 200px; max-height: 340px; background: var(--light); display: flex; align-items: center; justify-content: center; }
+        .content-card img { width: 100%; height: auto; max-height: 340px; object-fit: contain; transition: transform 0.4s ease; cursor: pointer; }
+        .content-card:hover img { transform: scale(1.02); }
+        .content-info { padding: 1.1rem 1.2rem 1.3rem; }
+        .content-info h3 { font-family: var(--font-main); font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; line-height: 1.4; }
+        .content-info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 
-        /* Poster cards - Rectangle shape */
-        .poster-card {
-            aspect-ratio: 3/2;
-        }
-
-        .content-card img, 
-        .content-card video,
-        .content-card iframe {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: #f4f4f4;
-        }
-
-        .content-info {
-            padding: 1.5rem;
-            position: relative;
-        }
-
-        .content-info h3 {
-            margin-bottom: 0.7rem;
-            font-size: 1.3rem;
-            color: var(--primary);
-        }
-
-        .content-info p {
-            color: #5a6a7a;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* Delete button for content */
         .delete-content-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            transition: all 0.2s;
-            z-index: 10;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            opacity: 0;
+            position: absolute; top: 8px; right: 8px;
+            background: var(--accent-red); color: white;
+            border: none; width: 32px; height: 32px;
+            border-radius: 50%; font-size: 0.75rem;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity var(--transition), transform var(--transition);
+            z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
+        .content-card:hover .delete-content-btn { opacity: 1; }
+        .delete-content-btn:hover { transform: scale(1.1); background: #dc2626; }
 
-        .content-card:hover .delete-content-btn {
-            opacity: 1;
-        }
+        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
+        .video-container iframe, .video-container video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-        .delete-content-btn:hover {
-            background: #c0392b;
-            transform: scale(1.1);
-        }
+        /* ===== Skeleton ===== */
+        @keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
+        .skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 800px 100%; animation: shimmer 1.4s infinite linear; border-radius: 4px; }
+        body.dark-mode .skeleton { background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%); background-size: 800px 100%; }
+        .skeleton-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+        .skeleton-img { height: 190px; }
+        .skeleton-body { padding: 1.2rem; }
+        .skeleton-title { height: 18px; width: 75%; margin-bottom: 10px; }
+        .skeleton-text { height: 13px; width: 90%; }
 
-        /* Admin delete button */
-        .admin-delete-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 0.4rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            margin-top: 0.6rem;
-            width: 100%;
-        }
-        
-        .admin-delete-btn:hover {
-            background: #c0392b;
-        }
+        /* ===== Progress Bar ===== */
+        .progress-container { width: 100%; background: var(--light); border-radius: 10px; margin: 8px 0; display: none; overflow: hidden; }
+        .progress-bar { height: 6px; background: linear-gradient(90deg, var(--secondary), var(--secondary-light)); width: 0; transition: width 0.3s ease; border-radius: 10px; }
+        .progress-text { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; text-align: center; }
 
-        /* Video container fix */
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            background: #000;
-        }
+        /* ===== Contact Section ===== */
+        .contact { background: var(--primary); padding: 3rem 1.5rem; margin-top: 2rem; }
+        .contact-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+        .contact-info h3 { font-family: var(--font-main); color: var(--accent); font-size: 1.1rem; margin-bottom: 1.2rem; }
+        .contact-info p { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8); margin-bottom: 0.8rem; font-size: 0.9rem; }
+        .contact-info i { color: var(--accent); width: 18px; flex-shrink: 0; }
+        .contact-info a { color: rgba(255,255,255,0.85); transition: color var(--transition); }
+        .contact-info a:hover { color: var(--accent); }
+        .map-link { color: var(--accent) !important; text-decoration: underline; }
 
-        .video-container iframe,
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        /* ===== Footer ===== */
+        footer { background: #0f172a; color: rgba(255,255,255,0.5); text-align: center; padding: 1.5rem; font-size: 0.85rem; }
+        footer a { color: var(--accent); margin: 0 6px; }
+        footer a:hover { text-decoration: underline; }
 
-        /* Progress Bar */
-        .progress-container {
-            width: 100%;
-            background: #f0f0f0;
-            border-radius: 10px;
-            margin: 10px 0;
-            display: none;
-            overflow: hidden;
-        }
-        
-        .progress-bar {
-            height: 6px;
-            background: var(--secondary);
-            width: 0%;
-            transition: width 0.3s ease;
-            border-radius: 10px;
-        }
-        
-        .progress-text {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 5px;
-            text-align: center;
-        }
-
-        /* Skeleton Loading */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-            border-radius: 4px;
-        }
-
-        .skeleton-card {
-            background: white;
-            border-radius: 12px;
-            padding: 0;
-            height: 250px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skeleton-image {
-            width: 100%;
-            height: 150px;
-            background: #e0e0e0;
-        }
-
-        .skeleton-title {
-            height: 24px;
-            width: 80%;
-            margin: 15px 15px 10px;
-            background: #e0e0e0;
-            border-radius: 4px;
-        }
-
-        .skeleton-text {
-            height: 16px;
-            width: 90%;
-            margin: 0 15px;
-            background: #e0e0e0;
-            border-radius: 4px;
-        }
-
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--primary);
-            color: white;
-            padding: 3rem 0;
-            margin-top: 3rem;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1.2rem;
-            color: #f1c40f;
-        }
-
-        .contact-info p {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .contact-info i {
-            color: #f1c40f;
-            width: 20px;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Map link style */
-        .map-link {
-            color: #f1c40f;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        footer {
-            background: #1a2b3c;
-            color: #ccc;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #f1c40f;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-
-        /* Back to Top Button */
+        /* ===== Back to Top ===== */
         .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--secondary);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s, transform 0.2s;
-            z-index: 99;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: none;
+            position: fixed; bottom: 24px; right: 24px;
+            background: var(--secondary); color: white;
+            width: 44px; height: 44px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s, transform var(--transition);
+            z-index: 99; box-shadow: 0 4px 12px rgba(37,99,235,0.4);
+            border: none; font-size: 0.9rem;
         }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-2px); background: var(--secondary-light); }
 
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: scale(1.1);
-            background: #2980b9;
-        }
-
-        /* Chat Widget */
-        .chat-widget {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 1000;
-        }
+        /* ===== Chat Widget ===== */
+        .chat-widget { position: fixed; bottom: 24px; left: 24px; z-index: 1000; }
         .chat-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-            text-decoration: none;
-            color: white;
-            font-size: 24px;
+            width: 52px; height: 52px;
+            background: var(--secondary); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+            color: white; font-size: 20px;
+            transition: transform var(--transition), background var(--transition);
         }
-        .chat-icon:hover {
-            transform: scale(1.1);
-            background: #2980b9;
-        }
+        .chat-icon:hover { transform: scale(1.08); background: var(--secondary-light); }
 
-        /* Notification */
+        /* ===== Notification ===== */
         .notification {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            padding: 1rem 1.8rem;
-            border-radius: 8px;
-            color: white;
-            z-index: 1002;
-            display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            animation: slideInRight 0.3s;
+            position: fixed; top: 76px; right: 20px;
+            padding: 0.85rem 1.5rem; border-radius: var(--radius-sm);
+            color: white; z-index: 1002; display: none;
+            font-size: 0.9rem; font-weight: 500;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            animation: slideInRight 0.3s ease; max-width: 320px;
+            display: flex; align-items: center; gap: 8px;
         }
         .notification.success { background: var(--success); }
-        .notification.error { background: var(--accent); }
+        .notification.error { background: var(--accent-red); }
         .notification.info { background: var(--secondary); }
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
+        .notification.warning { background: var(--warning); }
+        @keyframes slideInRight { from { transform: translateX(110%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
-        /* Admin Modal */
+        /* ===== Admin Modal ===== */
         .admin-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.6); z-index: 1001;
+            justify-content: center; align-items: center;
+            backdrop-filter: blur(4px);
         }
         .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 400px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background: var(--white); padding: 2rem;
+            border-radius: 18px; width: 90%; max-width: 380px;
+            position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.25);
         }
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #888;
-        }
-        .close-modal:hover { color: #333; }
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
+        .modal-content h2 { font-family: var(--font-main); color: var(--text); margin-bottom: 1.4rem; font-size: 1.3rem; }
+        .close-modal { position: absolute; top: 14px; right: 18px; font-size: 1.6rem; cursor: pointer; color: var(--text-muted); background: none; border: none; line-height: 1; }
+        .close-modal:hover { color: var(--text); }
+
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.4rem; font-size: 0.875rem; font-weight: 600; color: var(--text); font-family: var(--font-main); }
         .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
+            width: 100%; padding: 0.7rem 0.9rem;
+            border: 1px solid var(--border); border-radius: var(--radius-sm);
+            font-size: 0.95rem; font-family: var(--font-body);
+            color: var(--text); background: var(--white);
+            transition: border-color var(--transition);
         }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+
         .admin-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.8rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            width: 100%;
-            font-weight: 600;
+            background: var(--secondary); color: white;
+            border: none; padding: 0.75rem; border-radius: var(--radius-sm);
+            font-size: 0.95rem; font-family: var(--font-main);
+            font-weight: 600; width: 100%;
+            transition: background var(--transition), transform var(--transition);
+        }
+        .admin-btn:hover { background: var(--secondary-light); transform: translateY(-1px); }
+        .admin-btn:disabled { background: #cbd5e1; cursor: not-allowed; transform: none; }
+
+        /* ===== ADVANCED ADMIN PANEL ===== */
+        .admin-panel {
+            display: none; position: fixed; inset: 0;
+            background: #f8fafc; z-index: 1001; overflow: hidden;
+        }
+        body.dark-mode .admin-panel { background: #0f172a; }
+
+        /* Admin Layout */
+        .admin-layout { display: flex; height: 100%; }
+
+        /* Sidebar */
+        .admin-sidebar {
+            width: 260px; flex-shrink: 0;
+            background: var(--primary);
+            display: flex; flex-direction: column;
+            overflow-y: auto; transition: width 0.3s ease;
+        }
+        .sidebar-brand {
+            padding: 1.4rem 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .sidebar-brand-icon {
+            width: 36px; height: 36px; background: var(--secondary);
+            border-radius: 8px; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1rem; flex-shrink: 0;
+        }
+        .sidebar-brand-text { font-family: var(--font-main); font-size: 0.92rem; font-weight: 700; color: white; line-height: 1.2; }
+        .sidebar-brand-sub { font-size: 0.72rem; color: rgba(255,255,255,0.5); font-weight: 400; }
+
+        .sidebar-nav { flex: 1; padding: 1rem 0; }
+        .sidebar-section-label {
+            padding: 0.6rem 1.2rem 0.3rem;
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; color: rgba(255,255,255,0.35);
+        }
+        .sidebar-btn {
+            width: 100%; padding: 0.7rem 1.2rem;
+            display: flex; align-items: center; gap: 10px;
+            background: none; border: none; color: rgba(255,255,255,0.65);
+            font-size: 0.875rem; font-family: var(--font-body);
+            transition: all 0.2s; text-align: left;
+            border-left: 3px solid transparent;
             position: relative;
         }
-        .admin-btn:hover { background: #2980b9; }
-        .admin-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
+        .sidebar-btn:hover { background: rgba(255,255,255,0.07); color: white; }
+        .sidebar-btn.active { background: rgba(37,99,235,0.25); color: white; border-left-color: var(--secondary); font-weight: 600; }
+        .sidebar-btn i { width: 18px; font-size: 0.9rem; }
+        .sidebar-badge {
+            margin-left: auto; background: var(--secondary);
+            color: white; border-radius: 10px; padding: 1px 7px;
+            font-size: 0.7rem; font-weight: 700;
         }
+        .sidebar-badge.red { background: var(--accent-red); }
 
-        /* Admin Panel */
-        .admin-panel {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: #f5f7fa;
-            z-index: 1001;
-            overflow-y: auto;
-            padding: 2rem;
+        .sidebar-footer {
+            padding: 1rem 1.2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
-        .admin-container { max-width: 1200px; margin: 0 auto; }
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #ddd;
+        .admin-user-info {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 0.8rem;
         }
-        .admin-title { color: var(--primary); }
+        .admin-avatar {
+            width: 36px; height: 36px; background: var(--secondary);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; color: white; font-size: 1rem; font-weight: 700;
+        }
+        .admin-name { font-size: 0.82rem; color: rgba(255,255,255,0.8); font-family: var(--font-main); }
+        .admin-role { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
         .logout-btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
+            background: rgba(239,68,68,0.15); color: #fca5a5;
+            border: 1px solid rgba(239,68,68,0.3);
+            padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+            font-family: var(--font-main); font-weight: 600;
+            font-size: 0.82rem; width: 100%; display: flex;
+            align-items: center; justify-content: center; gap: 6px;
+            transition: all 0.2s;
         }
-        .logout-btn:hover { background: #c0392b; }
+        .logout-btn:hover { background: rgba(239,68,68,0.3); color: white; }
 
+        /* Admin Main Content */
+        .admin-main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+        /* Admin Top Bar */
+        .admin-topbar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 0.9rem 1.5rem;
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 1rem;
+            flex-shrink: 0;
+        }
+        body.dark-mode .admin-topbar { background: var(--white); }
+
+        .admin-topbar-title {
+            font-family: var(--font-main); font-size: 1.1rem;
+            font-weight: 700; color: var(--text);
+        }
+        .admin-topbar-actions { display: flex; align-items: center; gap: 0.8rem; }
+        .topbar-icon-btn {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: var(--light); border: 1px solid var(--border);
+            color: var(--text-muted); display: flex; align-items: center;
+            justify-content: center; font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .topbar-icon-btn:hover { background: var(--secondary); color: white; border-color: var(--secondary); }
+        .live-time { font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-main); font-weight: 600; }
+
+        /* Admin Content Area */
+        .admin-content { flex: 1; overflow-y: auto; padding: 1.5rem; }
+
+        /* Admin Tabs (views) */
+        .admin-view { display: none; }
+        .admin-view.active { display: block; }
+
+        /* ===== Dashboard Stats Cards ===== */
+        .dash-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+        .dash-stat-card {
+            background: var(--white); border-radius: var(--radius);
+            padding: 1.2rem; border: 1px solid var(--border);
+            box-shadow: var(--card-shadow);
+            display: flex; align-items: center; gap: 1rem;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .dash-stat-card:hover { transform: translateY(-2px); box-shadow: var(--card-shadow-hover); }
+        .dash-stat-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; flex-shrink: 0;
+        }
+        .dash-stat-icon.blue { background: #eff6ff; color: var(--secondary); }
+        .dash-stat-icon.green { background: #f0fdf4; color: var(--success); }
+        .dash-stat-icon.amber { background: #fffbeb; color: var(--warning); }
+        .dash-stat-icon.purple { background: #f5f3ff; color: var(--purple); }
+        .dash-stat-icon.red { background: #fef2f2; color: var(--accent-red); }
+        .dash-stat-value { font-family: var(--font-main); font-size: 1.6rem; font-weight: 800; color: var(--text); line-height: 1; }
+        .dash-stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 3px; }
+        .dash-stat-change { font-size: 0.75rem; margin-top: 4px; font-weight: 600; }
+        .dash-stat-change.up { color: var(--success); }
+        .dash-stat-change.neutral { color: var(--text-muted); }
+
+        /* ===== Quick Actions ===== */
+        .quick-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.8rem; margin-bottom: 1.5rem; }
+        .quick-action-btn {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1rem 0.8rem;
+            text-align: center; cursor: pointer;
+            transition: all 0.2s; color: var(--text);
+            box-shadow: var(--card-shadow);
+        }
+        .quick-action-btn:hover { border-color: var(--secondary); background: #eff6ff; color: var(--secondary); transform: translateY(-2px); }
+        .quick-action-btn i { font-size: 1.4rem; margin-bottom: 0.4rem; display: block; }
+        .quick-action-btn span { font-size: 0.8rem; font-family: var(--font-main); font-weight: 600; }
+
+        /* ===== Dashboard Grid ===== */
+        .dash-grid { display: grid; grid-template-columns: 1fr 340px; gap: 1.2rem; }
+        @media (max-width: 900px) { .dash-grid { grid-template-columns: 1fr; } }
+
+        /* ===== Recent Activity ===== */
+        .admin-card {
+            background: var(--white); border-radius: var(--radius);
+            border: 1px solid var(--border); box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+        .admin-card-header {
+            padding: 1rem 1.2rem; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .admin-card-title { font-family: var(--font-main); font-size: 0.95rem; font-weight: 700; color: var(--text); }
+        .admin-card-action { font-size: 0.8rem; color: var(--secondary); cursor: pointer; font-weight: 600; }
+        .admin-card-body { padding: 1rem 1.2rem; }
+
+        /* Activity log */
+        .activity-list { list-style: none; }
+        .activity-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 0.65rem 0; border-bottom: 1px solid var(--border);
+        }
+        .activity-item:last-child { border-bottom: none; }
+        .activity-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            margin-top: 6px; flex-shrink: 0;
+        }
+        .activity-dot.green { background: var(--success); }
+        .activity-dot.blue { background: var(--secondary); }
+        .activity-dot.red { background: var(--accent-red); }
+        .activity-dot.amber { background: var(--warning); }
+        .activity-text { font-size: 0.83rem; color: var(--text); line-height: 1.4; }
+        .activity-time { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+
+        /* Mini chart bars */
+        .mini-chart { display: flex; align-items: flex-end; gap: 4px; height: 60px; margin-top: 0.5rem; }
+        .mini-bar {
+            flex: 1; background: var(--secondary); border-radius: 4px 4px 0 0;
+            opacity: 0.7; transition: opacity 0.2s;
+        }
+        .mini-bar:hover { opacity: 1; }
+        .mini-bar.green { background: var(--success); }
+        .mini-bar.amber { background: var(--warning); }
+
+        /* Content breakdown pie (CSS) */
+        .content-breakdown { display: flex; flex-direction: column; gap: 0.7rem; }
+        .breakdown-item { display: flex; align-items: center; gap: 0.8rem; }
+        .breakdown-bar-wrap { flex: 1; background: var(--light); border-radius: 10px; height: 8px; overflow: hidden; }
+        .breakdown-bar { height: 100%; border-radius: 10px; transition: width 0.8s ease; }
+        .breakdown-label { font-size: 0.8rem; color: var(--text); min-width: 60px; font-weight: 600; }
+        .breakdown-count { font-size: 0.8rem; color: var(--text-muted); min-width: 24px; text-align: right; }
+
+        /* ===== Upload Sections ===== */
         .upload-section {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: var(--white); padding: 1.5rem;
+            border-radius: var(--radius); margin-bottom: 1.2rem;
+            box-shadow: var(--card-shadow); border: 1px solid var(--border);
         }
-        .upload-section h3 { margin-bottom: 1.2rem; color: var(--primary); }
+        .upload-section-header {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 1.2rem; padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .upload-section-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+        }
+        .upload-section-icon.blue { background: #eff6ff; color: var(--secondary); }
+        .upload-section-icon.green { background: #f0fdf4; color: var(--success); }
+        .upload-section-icon.amber { background: #fffbeb; color: var(--warning); }
+        .upload-section-icon.purple { background: #f5f3ff; color: var(--purple); }
+        .upload-section h3 { font-family: var(--font-main); font-size: 1rem; color: var(--text); font-weight: 700; }
 
-        /* Image Upload */
+        /* Image upload drop area */
         .image-upload-container {
-            border: 2px dashed #ccc;
-            border-radius: 8px;
-            padding: 1.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            background: #fafafa;
+            border: 2px dashed var(--border); border-radius: var(--radius-sm);
+            padding: 1.5rem; text-align: center; cursor: pointer;
+            background: var(--light); color: var(--text-muted);
+            font-size: 0.9rem; transition: all var(--transition);
         }
-        .image-upload-container:hover { border-color: var(--secondary); }
-        .image-upload-container.dragover { border-color: var(--secondary); background: #e8f4fe; }
-        .media-preview {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 0.8rem;
+        .image-upload-container:hover, .image-upload-container.dragover { border-color: var(--secondary); background: #eff6ff; color: var(--secondary); }
+        .image-upload-container i { font-size: 1.4rem; margin-bottom: 6px; display: block; }
+
+        .media-preview { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.7rem; }
+        .media-preview img { max-width: 130px; max-height: 100px; border-radius: 6px; border: 1px solid var(--border); object-fit: cover; }
+
+        /* ===== Logo Upload Section ===== */
+        .logo-upload-area {
+            border: 2px dashed var(--border); border-radius: var(--radius);
+            padding: 2rem; text-align: center; cursor: pointer;
+            background: var(--light); color: var(--text-muted);
+            transition: all var(--transition); position: relative;
         }
-        .media-preview img, .media-preview video {
-            max-width: 150px;
-            max-height: 120px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-            object-fit: cover;
+        .logo-upload-area:hover, .logo-upload-area.dragover { border-color: var(--purple); background: #f5f3ff; color: var(--purple); }
+        .logo-upload-area i { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
+        .logo-upload-area p { font-size: 0.9rem; margin-bottom: 0.4rem; }
+        .logo-upload-area small { font-size: 0.78rem; opacity: 0.7; }
+
+        .logo-preview-box {
+            display: flex; align-items: center; gap: 1.5rem;
+            background: var(--primary); border-radius: var(--radius);
+            padding: 1.2rem 1.5rem; margin-top: 1rem;
+        }
+        .logo-preview-box img { height: 60px; object-fit: contain; border-radius: 8px; background: rgba(255,255,255,0.08); padding: 4px; }
+        .logo-preview-box .preview-label { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+        .logo-preview-box .preview-label strong { color: white; display: block; margin-bottom: 2px; }
+
+        .logo-action-btns { display: flex; gap: 0.7rem; margin-top: 1rem; }
+        .btn-save-logo {
+            background: var(--purple); color: white; border: none;
+            padding: 0.6rem 1.4rem; border-radius: var(--radius-sm);
+            font-family: var(--font-main); font-weight: 600; font-size: 0.875rem;
+            transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+        }
+        .btn-save-logo:hover { background: #7c3aed; transform: translateY(-1px); }
+        .btn-remove-logo {
+            background: var(--light); color: var(--accent-red); border: 1px solid var(--border);
+            padding: 0.6rem 1.2rem; border-radius: var(--radius-sm);
+            font-family: var(--font-main); font-weight: 600; font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        .btn-remove-logo:hover { background: #fef2f2; border-color: var(--accent-red); }
+
+        /* ===== Admin Content Manager ===== */
+        .admin-content-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;
+        }
+        .admin-item-card {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: var(--radius-sm); overflow: hidden;
+            box-shadow: var(--card-shadow); position: relative;
+            transition: transform var(--transition);
+        }
+        .admin-item-card:hover { transform: translateY(-2px); }
+        .admin-item-thumb {
+            height: 100px; overflow: hidden; background: var(--light);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .admin-item-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .admin-item-thumb .video-icon { font-size: 2rem; color: var(--text-muted); }
+        .admin-item-info { padding: 0.7rem; }
+        .admin-item-info h4 { font-size: 0.8rem; font-family: var(--font-main); font-weight: 600; color: var(--text); margin-bottom: 0.3rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .admin-item-info p { font-size: 0.72rem; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .admin-delete-btn {
+            background: var(--accent-red); color: white; border: none;
+            padding: 0.35rem; border-radius: 4px; font-size: 0.75rem;
+            margin-top: 0.5rem; width: 100%; font-family: var(--font-main);
+            font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 4px;
+        }
+        .admin-delete-btn:hover { background: #dc2626; }
+
+        /* Content type badge */
+        .admin-type-badge {
+            position: absolute; top: 6px; left: 6px;
+            background: rgba(0,0,0,0.65); color: white;
+            border-radius: 4px; padding: 2px 6px; font-size: 0.65rem;
+            font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
         }
 
-        .loading, .no-content { text-align: center; padding: 2rem; color: #666; }
+        /* ===== Settings ===== */
+        .settings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+        .settings-item {
+            background: var(--white); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 1.2rem;
+            box-shadow: var(--card-shadow);
+        }
+        .settings-item h4 { font-family: var(--font-main); font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; display: flex; align-items: center; gap: 8px; }
+        .settings-item p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.8rem; }
+        .toggle-switch { display: flex; align-items: center; gap: 10px; }
+        .toggle-switch input[type="checkbox"] { appearance: none; width: 44px; height: 24px; background: var(--border); border-radius: 12px; cursor: pointer; transition: background 0.3s; position: relative; }
+        .toggle-switch input[type="checkbox"]::after { content: ''; width: 18px; height: 18px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: transform 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .toggle-switch input[type="checkbox"]:checked { background: var(--secondary); }
+        .toggle-switch input[type="checkbox"]:checked::after { transform: translateX(20px); }
+        .toggle-label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            .logo { font-size: 1.2rem; }
-            .logo img { height: 30px; }
+        /* ===== Retry Banner ===== */
+        .retry-banner {
+            background: #fef2f2; border: 1px solid #fecaca;
+            border-radius: var(--radius-sm); padding: 1rem 1.2rem;
+            margin-bottom: 1rem; display: flex;
+            align-items: center; gap: 0.8rem;
+        }
+        .retry-banner i { color: var(--accent-red); font-size: 1.1rem; }
+        .retry-banner p { font-size: 0.875rem; color: #991b1b; flex: 1; }
+        .retry-btn {
+            background: var(--accent-red); color: white; border: none;
+            padding: 0.45rem 1rem; border-radius: var(--radius-sm);
+            font-size: 0.82rem; font-family: var(--font-main); font-weight: 600;
+            white-space: nowrap;
+        }
+        .retry-btn:hover { background: #dc2626; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .admin-sidebar { width: 60px; }
+            .sidebar-brand-text, .sidebar-section-label, .sidebar-btn span, .admin-user-info .admin-name, .admin-user-info .admin-role, .logout-btn span { display: none; }
+            .sidebar-badge { display: none; }
+            .sidebar-btn { justify-content: center; padding: 0.8rem; border-left: none; border-bottom: 2px solid transparent; }
+            .sidebar-btn.active { border-left: none; border-bottom-color: var(--secondary); }
+            .sidebar-footer { padding: 0.8rem 0.6rem; }
+            .logout-btn { padding: 0.5rem; justify-content: center; }
+            .dash-grid { grid-template-columns: 1fr; }
+            .logo { font-size: 0.95rem; }
+            .logo img { height: 28px; }
+            .hero { padding: 2.5rem 1rem; }
+            .hero h1 { font-size: 1.6rem; }
+            .btn-outline { display: none; }
+        }
+        @media (max-width: 480px) {
+            .quick-actions { grid-template-columns: repeat(2, 1fr); }
+            .dash-stats { grid-template-columns: repeat(2, 1fr); }
+            .website-logo-img, .website-logo-placeholder { height: 38px; width: 38px; }
+        }
+
+        /* ===== Lightbox ===== */
+        .lightbox-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(0,0,0,0.92); z-index: 2000;
+            justify-content: center; align-items: center;
+            padding: 16px; cursor: zoom-out;
+            animation: fadeIn 0.2s ease;
+        }
+        .lightbox-overlay.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .lightbox-inner { position: relative; max-width: 95vw; max-height: 95vh; display: flex; flex-direction: column; align-items: center; cursor: default; }
+        .lightbox-img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); display: block; }
+        .lightbox-caption { color: rgba(255,255,255,0.85); font-family: var(--font-main); font-size: 0.95rem; text-align: center; margin-top: 12px; padding: 0 10px; }
+        .lightbox-close { position: fixed; top: 18px; right: 22px; background: rgba(255,255,255,0.12); border: none; color: white; font-size: 1.8rem; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2001; transition: background 0.2s; }
+        .lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+        /* ===== Loading Overlay for Data ===== */
+        .load-overlay { text-align: center; padding: 2.5rem; color: var(--text-muted); }
+        .load-spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--secondary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .no-content { text-align: center; padding: 2.5rem; color: var(--text-muted); font-size: 0.95rem; }
+        .no-content i { font-size: 2.5rem; margin-bottom: 0.8rem; color: var(--border); display: block; }
+
+        section { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+        /* Responsive admin content */
+        @media (max-width: 640px) {
+            .admin-content { padding: 1rem; }
+            .admin-content-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header with Logo -->
-    <header>
-        <div class="header-container">
-            <div class="three-line-menu" id="three-line-menu">
-                <span></span><span></span><span></span>
-            </div>
-            <div class="menu-dropdown" id="menu-dropdown">
-                <button id="notice-btn"><i class="fas fa-copy"></i> admission form</button>
-                <button id="query-form-btn"><i class="fas fa-pen"></i> Query Form</button>
-                <button id="download-pdf-btn"><i class="fas fa-download"></i> Download PDF</button>
-                <!-- New Attendance Option Added -->
-                <button id="attendance-btn"><i class="fas fa-calendar-check"></i> Attendance</button>
-                <button id="dark-mode-toggle-menu"><i class="fas fa-moon"></i> Dark Mode</button>
-                <button id="admin-login-btn-menu"><i class="fas fa-lock"></i> Admin Login</button>
-                <button id="home-btn-menu"><i class="fas fa-home"></i> Home</button>
-                <button id="posters-btn-menu"><i class="fas fa-image"></i> Posters</button>
-                <button id="images-btn-menu"><i class="fas fa-image"></i> Images</button>
-                <button id="videos-btn-menu"><i class="fas fa-play-circle"></i> Videos</button>
-                <button id="contact-btn-menu"><i class="fas fa-envelope"></i> Contact</button>
-            </div>
-            <a href="#home" class="logo">
-                <img src="/logo.png" alt="Education Toppers Hub Logo" onerror="this.style.display='none'">
-                Education <span>Toppers Hub</span>
-            </a>
-        </div>
-    </header>
 
-    <!-- Hero Section with Video for Rich Results -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Empowering Learners, Celebrating Toppers</h1>
-            <p>Access posters, images, and videos — all in one place.</p>
-            <a href="#posters" class="btn">Explore Resources</a>
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <!-- Left: Hamburger -->
+        <div class="three-line-menu" id="three-line-menu" aria-label="Menu" role="button" aria-expanded="false" tabindex="0">
+            <span></span><span></span><span></span>
         </div>
-        <!-- Hidden video for SEO (will be detected by Google) -->
-        <div style="display: none;" itemscope itemtype="https://schema.org/VideoObject">
-            <meta itemprop="name" content="Education Toppers Hub Introduction">
-            <meta itemprop="description" content="Welcome to Education Toppers Hub - Your learning partner">
-            <meta itemprop="thumbnailUrl" content="https://educationtoppershub.netlify.app/assets/og-image.jpg">
-            <meta itemprop="uploadDate" content="2026-02-19">
-            <meta itemprop="contentUrl" content="https://educationtoppershub.netlify.app/videos/intro.mp4">
-            <meta itemprop="embedUrl" content="https://www.youtube.com/embed/zryGpo3FQZY">
+        <!-- Dropdown Menu -->
+        <div class="menu-dropdown" id="menu-dropdown" role="menu">
+            <button id="notice-btn" role="menuitem"><i class="fas fa-file-alt"></i> Admission Form</button>
+            <button id="query-form-btn" role="menuitem"><i class="fas fa-pen-alt"></i> Query Form</button>
+            <button id="download-pdf-btn" role="menuitem"><i class="fas fa-file-pdf"></i> Download PDF</button>
+            <button id="attendance-btn" role="menuitem"><i class="fas fa-calendar-check"></i> Attendance</button>
+            <button id="dark-mode-toggle-menu" role="menuitem"><i class="fas fa-moon"></i> Dark Mode</button>
+            <button id="admin-login-btn-menu" role="menuitem"><i class="fas fa-lock"></i> Admin Login</button>
+            <button id="home-btn-menu" role="menuitem"><i class="fas fa-home"></i> Home</button>
+            <button id="posters-btn-menu" role="menuitem"><i class="fas fa-image"></i> Posters</button>
+            <button id="images-btn-menu" role="menuitem"><i class="fas fa-camera"></i> Images</button>
+            <button id="videos-btn-menu" role="menuitem"><i class="fas fa-play-circle"></i> Videos</button>
+            <button id="contact-btn-menu" role="menuitem"><i class="fas fa-envelope"></i> Contact</button>
         </div>
-    </section>
 
-    <!-- Search & Categories -->
+        <!-- Center: Site Name -->
+        <a href="#home" class="logo" aria-label="Education Toppers Hub Home">
+            <img src="/logo.png" alt="ETH Logo" onerror="this.style.display='none'" width="34" height="34">
+            Education <span>Toppers Hub</span>
+        </a>
+
+        <!-- Right: Website Logo -->
+        <div class="header-logo-right">
+            <div id="header-logo-wrap">
+                <!-- Filled by JS from localStorage -->
+                <div class="website-logo-placeholder" id="header-logo-placeholder" title="No logo set">
+                    <i class="fas fa-image"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> Bihar's #1 Education Platform</div>
+        <h1>Empowering Learners,<br><span>Celebrating Toppers</span></h1>
+        <p>Access posters, images, and educational videos — all in one place.</p>
+        <a href="#posters" class="btn"><i class="fas fa-rocket"></i> Explore Resources</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar" id="stats-bar">
+    <div class="stats-inner">
+        <div class="stat-item"><i class="fas fa-image" style="color:#2563eb"></i> <strong id="stat-posters">—</strong> Posters</div>
+        <div class="stat-item"><i class="fas fa-camera" style="color:#10b981"></i> <strong id="stat-images">—</strong> Images</div>
+        <div class="stat-item"><i class="fas fa-play-circle" style="color:#f59e0b"></i> <strong id="stat-videos">—</strong> Videos</div>
+    </div>
+</div>
+
+<!-- Retry Banner (hidden by default) -->
+<div class="retry-banner" id="retry-banner" style="display:none; max-width:1200px; margin:1rem auto; padding:0 20px;">
+    <i class="fas fa-exclamation-triangle"></i>
+    <p id="retry-banner-msg">Content load failed. Check your internet connection.</p>
+    <button class="retry-btn" onclick="window.retryLoad()"><i class="fas fa-redo"></i> Retry</button>
+</div>
+
+<!-- Search & Filter -->
+<div class="search-filter-area">
     <div class="search-container">
-        <input type="text" class="search-bar" id="search-bar" placeholder="Search posters, images, videos...">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" class="search-bar" id="search-bar"
+            placeholder="Search posters, images, videos..."
+            autocomplete="off" spellcheck="false" aria-label="Search content">
+        <button class="search-clear" id="search-clear" aria-label="Clear search"><i class="fas fa-times"></i></button>
     </div>
-    <div class="categories" id="categories">
-        <button class="category-btn active" data-category="all">All</button>
-        <button class="category-btn" data-category="poster">Posters</button>
-        <button class="category-btn" data-category="image">Images</button>
-        <button class="category-btn" data-category="video">Videos</button>
+    <div class="categories" id="categories" role="tablist">
+        <button class="category-btn active" data-category="all" role="tab"><i class="fas fa-border-all"></i> All</button>
+        <button class="category-btn" data-category="poster" role="tab"><i class="fas fa-image"></i> Posters</button>
+        <button class="category-btn" data-category="image" role="tab"><i class="fas fa-camera"></i> Images</button>
+        <button class="category-btn" data-category="video" role="tab"><i class="fas fa-play-circle"></i> Videos</button>
     </div>
+</div>
 
-    <!-- Main Content Grids -->
-    <div class="container">
-        <!-- Posters Section -->
-        <section id="posters">
-            <div class="section-title"><h2>🖼️ Posters</h2></div>
-            <div class="content-grid" id="posters-grid">
-                <!-- Skeleton loading will be shown here -->
-            </div>
-        </section>
-        
-        <!-- Images Section -->
-        <section id="images">
-            <div class="section-title"><h2>📸 Images</h2></div>
-            <div class="content-grid" id="images-grid">
-                <!-- Skeleton loading will be shown here -->
-            </div>
-        </section>
-        
-        <!-- Videos Section -->
-        <section id="videos">
-            <div class="section-title"><h2>🎥 Videos</h2></div>
-            <div class="content-grid" id="videos-grid">
-                <!-- Skeleton loading will be shown here -->
-            </div>
-        </section>
-    </div>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Muzaffarpur, Atardah Road, Bihar, 842002</p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+919304328465">+91 93043 28465</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:toppershub@gmail.com">ethwemaketoppers@gmail.com</a></p>
-                <p><i class="fas fa-map"></i> <a href="https://maps.app.goo.gl/VDvdoachbV3vDU1KA" target="_blank" class="map-link">View on Google Maps</a></p>
-            </div>
-            <div class="contact-info">
-                <h3>Follow Us</h3>
-                <p><i class="fab fa-instagram"></i> @education_toppers_hub</p>
-                <p><i class="fab fa-facebook"></i> Education Toppers Hub</p>
-                <p><i class="fab fa-youtube"></i> @ETH_learn</p>
-            </div>
+<!-- Main Content -->
+<div class="container">
+    <section id="posters">
+        <div class="section-title">
+            <h2>🖼️ Posters</h2>
+            <div class="section-line"></div>
         </div>
+        <div class="content-grid" id="posters-grid"></div>
     </section>
 
-    <footer>
-        <p>© 2026 Education Toppers Hub. All rights reserved.</p>
-        <p><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Sitemap</a></p>
-    </footer>
+    <section id="images">
+        <div class="section-title">
+            <h2>📸 Images</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="content-grid" id="images-grid"></div>
+    </section>
 
-    <!-- Back to Top -->
-    <div class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up"></i></div>
+    <section id="videos">
+        <div class="section-title">
+            <h2>🎥 Videos</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="content-grid" id="videos-grid"></div>
+    </section>
+</div>
 
-    <!-- Chat Widget -->
-    <div class="chat-widget">
-        <a href="https://faiz786-lada.github.io/ETH-notice/" target="_blank" class="chat-icon" title="Notice Board"><i class="fas fa-bullhorn"></i></a>
-    </div>
-
-    <!-- Notification -->
-    <div class="notification" id="notification"></div>
-
-    <!-- Admin Login Modal -->
-    <div class="admin-modal" id="admin-modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-modal">&times;</span>
-            <h2>Admin Login</h2>
-            <form id="admin-login-form">
-                <div class="form-group"><label>Email</label><input type="email" id="admin-email" required></div>
-                <div class="form-group"><label>Password</label><input type="password" id="admin-password" required></div>
-                <button type="submit" class="admin-btn">Login</button>
-            </form>
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Muzaffarpur, Atardah Road, Bihar 842002</p>
+            <p><i class="fas fa-phone"></i><a href="tel:+919304328465">+91 93043 28465</a></p>
+            <p><i class="fas fa-envelope"></i><a href="mailto:ethwemaketoppers@gmail.com">ethwemaketoppers@gmail.com</a></p>
+            <p><i class="fas fa-map"></i><a href="https://maps.app.goo.gl/VDvdoachbV3vDU1KA" target="_blank" rel="noopener" class="map-link">View on Google Maps</a></p>
+        </div>
+        <div class="contact-info">
+            <h3>Follow Us</h3>
+            <p><i class="fab fa-instagram"></i><a href="https://www.instagram.com/education_toppers_hub?igsh=Zmhhdm4ycnlxbGIy" target="_blank" rel="noopener"> @education_toppers_hub</a></p>
+            <p><i class="fab fa-facebook"></i><a href="https://www.facebook.com/p/Education-Toppers-Hub-61555815687522/" target="_blank" rel="noopener"> Education Toppers Hub</a></p>
+            <p><i class="fab fa-youtube"></i><a href="https://www.youtube.com/@ETH_learn" target="_blank" rel="noopener"> @ETH_learn</a></p>
         </div>
     </div>
+</section>
 
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="admin-panel">
-        <div class="admin-container">
-            <div class="admin-header">
-                <h2 class="admin-title">Admin Panel</h2>
-                <button class="logout-btn" id="logout-btn">Logout</button>
-            </div>
-            
-            <!-- Upload Poster -->
-            <div class="upload-section">
-                <h3>🖼️ Upload Poster</h3>
-                <form id="poster-form">
-                    <div class="form-group"><label>Title</label><input type="text" id="poster-title" required></div>
-                    <div class="form-group"><label>Description</label><textarea id="poster-description" rows="2"></textarea></div>
-                    <div class="form-group"><label>Poster Image</label>
-                        <div class="image-upload-container" id="poster-image-container"><i class="fas fa-cloud-upload-alt"></i> Click or drag poster</div>
-                        <input type="file" id="poster-image-file" accept="image/*" style="display:none;">
-                        <div class="media-preview" id="poster-image-preview"></div>
-                        <input type="hidden" id="poster-image-url">
-                    </div>
-                    <div class="progress-container" id="poster-progress">
-                        <div class="progress-bar" id="poster-progress-bar"></div>
-                        <div class="progress-text" id="poster-progress-text">0%</div>
-                    </div>
-                    <button type="submit" class="admin-btn" id="poster-upload-btn">Upload Poster</button>
-                </form>
-            </div>
-            
-            <!-- Upload Image -->
-            <div class="upload-section">
-                <h3>📸 Upload Image</h3>
-                <form id="image-form">
-                    <div class="form-group"><label>Title</label><input type="text" id="image-title" required></div>
-                    <div class="form-group"><label>Description</label><textarea id="image-description" rows="2"></textarea></div>
-                    <div class="form-group"><label>Image</label>
-                        <div class="image-upload-container" id="image-image-container"><i class="fas fa-cloud-upload-alt"></i> Click or drag image</div>
-                        <input type="file" id="image-image-file" accept="image/*" style="display:none;">
-                        <div class="media-preview" id="image-image-preview"></div>
-                        <input type="hidden" id="image-image-url">
-                    </div>
-                    <div class="progress-container" id="image-progress">
-                        <div class="progress-bar" id="image-progress-bar"></div>
-                        <div class="progress-text" id="image-progress-text">0%</div>
-                    </div>
-                    <button type="submit" class="admin-btn" id="image-upload-btn">Upload Image</button>
-                </form>
-            </div>
-            
-            <!-- Upload Video -->
-            <div class="upload-section">
-                <h3>🎬 Upload Video</h3>
-                <form id="video-form">
-                    <div class="form-group"><label>Title</label><input type="text" id="video-title" required></div>
-                    <div class="form-group"><label>Description</label><textarea id="video-description" rows="2"></textarea></div>
-                    <div class="form-group"><label>Video URL (YouTube/Vimeo/MP4)</label>
-                        <input type="url" id="video-url" placeholder="https://..." required>
-                    </div>
-                    <div class="progress-container" id="video-progress">
-                        <div class="progress-bar" id="video-progress-bar"></div>
-                        <div class="progress-text" id="video-progress-text">0%</div>
-                    </div>
-                    <button type="submit" class="admin-btn" id="video-upload-btn">Upload Video</button>
-                </form>
-            </div>
-            
-            <!-- Manage Content -->
-            <div class="upload-section">
-                <h3>📋 Manage Content</h3>
-                
-                <h4>Posters</h4>
-                <div class="content-grid" id="admin-posters-grid"></div>
-                
-                <h4>Images</h4>
-                <div class="content-grid" id="admin-images-grid"></div>
-                
-                <h4>Videos</h4>
-                <div class="content-grid" id="admin-videos-grid"></div>
-            </div>
-        </div>
+<footer>
+    <p>© 2026 Education Toppers Hub. All rights reserved.</p>
+    <p style="margin-top:0.4rem"><a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Sitemap</a></p>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox-overlay">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+    <div class="lightbox-inner">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
+</div>
 
-    <!-- Firebase SDK -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getFirestore, collection, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+<!-- Back to Top -->
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyCzCp_EGGmSolCSy8iQNrQAE-vGO8vTKIo",
-            authDomain: "education-toppers-hub-4d045.firebaseapp.com",
-            databaseURL: "https://education-toppers-hub-4d045-default-rtdb.firebaseio.com",
-            projectId: "education-toppers-hub-4d045",
-            storageBucket: "education-toppers-hub-4d045.firebasestorage.app",
-            messagingSenderId: "1065320525597",
-            appId: "1:1065320525597:web:ca166ff0d6e257492f3bf4",
-            measurementId: "G-QTF6FHGEFZ"
+<!-- Chat Widget -->
+<div class="chat-widget">
+    <a href="https://faiz786-lada.github.io/ETH-notice/" target="_blank" rel="noopener" class="chat-icon" title="Notice Board" aria-label="Notice Board">
+        <i class="fas fa-bullhorn"></i>
+    </a>
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notification" role="alert" aria-live="polite" style="display:none;"></div>
+
+<!-- Admin Login Modal -->
+<div class="admin-modal" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+        <button class="close-modal" id="close-modal" aria-label="Close">&times;</button>
+        <h2 id="modal-title"><i class="fas fa-lock" style="color:var(--secondary);margin-right:8px"></i>Admin Login</h2>
+        <form id="admin-login-form" novalidate>
+            <div class="form-group">
+                <label for="admin-email">Email</label>
+                <input type="email" id="admin-email" required autocomplete="email" placeholder="admin@example.com">
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="admin-btn" id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- ==================== ADVANCED ADMIN PANEL ==================== -->
+<div class="admin-panel" id="admin-panel" role="main">
+    <div class="admin-layout">
+
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="sidebar-brand-text">
+                    ETH Admin
+                    <div class="sidebar-brand-sub">Control Panel</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-label">Overview</div>
+                <button class="sidebar-btn active" data-view="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </button>
+
+                <div class="sidebar-section-label">Content</div>
+                <button class="sidebar-btn" data-view="upload-poster">
+                    <i class="fas fa-image"></i>
+                    <span>Upload Poster</span>
+                </button>
+                <button class="sidebar-btn" data-view="upload-image">
+                    <i class="fas fa-camera"></i>
+                    <span>Upload Image</span>
+                </button>
+                <button class="sidebar-btn" data-view="upload-video">
+                    <i class="fas fa-video"></i>
+                    <span>Upload Video</span>
+                </button>
+                <button class="sidebar-btn" data-view="manage">
+                    <i class="fas fa-th-large"></i>
+                    <span>Manage Content</span>
+                    <span class="sidebar-badge" id="sb-total-badge">0</span>
+                </button>
+
+                <div class="sidebar-section-label">Customization</div>
+                <button class="sidebar-btn" data-view="logo">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>Logo Settings</span>
+                </button>
+                <button class="sidebar-btn" data-view="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-user-info">
+                    <div class="admin-avatar">A</div>
+                    <div>
+                        <div class="admin-name">Admin</div>
+                        <div class="admin-role">Super Admin</div>
+                    </div>
+                </div>
+                <button class="logout-btn" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Area -->
+        <div class="admin-main">
+            <!-- Top Bar -->
+            <div class="admin-topbar">
+                <div class="admin-topbar-title" id="admin-view-title">📊 Dashboard</div>
+                <div class="admin-topbar-actions">
+                    <span class="live-time" id="live-time"></span>
+                    <button class="topbar-icon-btn" onclick="window.retryLoad()" title="Refresh Data">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                    <button class="topbar-icon-btn" onclick="document.body.classList.toggle('dark-mode')" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="admin-content">
+
+                <!-- ======= DASHBOARD VIEW ======= -->
+                <div class="admin-view active" id="view-dashboard">
+                    <!-- Stats Cards -->
+                    <div class="dash-stats">
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon blue"><i class="fas fa-image"></i></div>
+                            <div>
+                                <div class="dash-stat-value" id="dash-poster-count">0</div>
+                                <div class="dash-stat-label">Total Posters</div>
+                                <div class="dash-stat-change up" id="dash-poster-change">—</div>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon green"><i class="fas fa-camera"></i></div>
+                            <div>
+                                <div class="dash-stat-value" id="dash-image-count">0</div>
+                                <div class="dash-stat-label">Total Images</div>
+                                <div class="dash-stat-change up" id="dash-image-change">—</div>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon amber"><i class="fas fa-play-circle"></i></div>
+                            <div>
+                                <div class="dash-stat-value" id="dash-video-count">0</div>
+                                <div class="dash-stat-label">Total Videos</div>
+                                <div class="dash-stat-change up" id="dash-video-change">—</div>
+                            </div>
+                        </div>
+                        <div class="dash-stat-card">
+                            <div class="dash-stat-icon purple"><i class="fas fa-layer-group"></i></div>
+                            <div>
+                                <div class="dash-stat-value" id="dash-total-count">0</div>
+                                <div class="dash-stat-label">Total Content</div>
+                                <div class="dash-stat-change neutral">All types</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <div class="quick-action-btn" data-nav="upload-poster">
+                            <i class="fas fa-plus-circle" style="color:var(--secondary)"></i>
+                            <span>New Poster</span>
+                        </div>
+                        <div class="quick-action-btn" data-nav="upload-image">
+                            <i class="fas fa-camera" style="color:var(--success)"></i>
+                            <span>New Image</span>
+                        </div>
+                        <div class="quick-action-btn" data-nav="upload-video">
+                            <i class="fas fa-video" style="color:var(--warning)"></i>
+                            <span>New Video</span>
+                        </div>
+                        <div class="quick-action-btn" data-nav="logo">
+                            <i class="fas fa-paint-brush" style="color:var(--purple)"></i>
+                            <span>Set Logo</span>
+                        </div>
+                        <div class="quick-action-btn" onclick="window.retryLoad()">
+                            <i class="fas fa-sync-alt" style="color:var(--accent-red)"></i>
+                            <span>Refresh</span>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div class="dash-grid">
+                        <!-- Content Breakdown -->
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <span class="admin-card-title"><i class="fas fa-chart-bar" style="color:var(--secondary);margin-right:6px"></i>Content Overview</span>
+                                <span class="admin-card-action" onclick="switchView('manage')">View All →</span>
+                            </div>
+                            <div class="admin-card-body">
+                                <div class="content-breakdown" id="content-breakdown">
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label"><i class="fas fa-image" style="color:var(--secondary)"></i> Posters</span>
+                                        <div class="breakdown-bar-wrap"><div class="breakdown-bar" id="bar-posters" style="background:var(--secondary); width:0%"></div></div>
+                                        <span class="breakdown-count" id="bcount-posters">0</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label"><i class="fas fa-camera" style="color:var(--success)"></i> Images</span>
+                                        <div class="breakdown-bar-wrap"><div class="breakdown-bar" id="bar-images" style="background:var(--success); width:0%"></div></div>
+                                        <span class="breakdown-count" id="bcount-images">0</span>
+                                    </div>
+                                    <div class="breakdown-item">
+                                        <span class="breakdown-label"><i class="fas fa-video" style="color:var(--warning)"></i> Videos</span>
+                                        <div class="breakdown-bar-wrap"><div class="breakdown-bar" id="bar-videos" style="background:var(--warning); width:0%"></div></div>
+                                        <span class="breakdown-count" id="bcount-videos">0</span>
+                                    </div>
+                                </div>
+
+                                <!-- Mini bar chart (recent 7 uploads) -->
+                                <div style="margin-top:1.5rem;">
+                                    <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.4rem;font-weight:600;">Upload Activity (Last 7 items)</div>
+                                    <div class="mini-chart" id="mini-chart">
+                                        <!-- bars injected by JS -->
+                                    </div>
+                                    <div style="display:flex;justify-content:space-between;font-size:0.68rem;color:var(--text-muted);margin-top:4px;">
+                                        <span>Older</span><span>Newer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="admin-card">
+                            <div class="admin-card-header">
+                                <span class="admin-card-title"><i class="fas fa-history" style="color:var(--success);margin-right:6px"></i>Recent Activity</span>
+                            </div>
+                            <div class="admin-card-body" style="padding:0.5rem 1.2rem;">
+                                <ul class="activity-list" id="activity-list">
+                                    <li class="activity-item"><div class="activity-dot neutral" style="background:var(--border)"></div><div><div class="activity-text">Loading activity...</div></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= UPLOAD POSTER VIEW ======= -->
+                <div class="admin-view" id="view-upload-poster">
+                    <div class="upload-section">
+                        <div class="upload-section-header">
+                            <div class="upload-section-icon blue"><i class="fas fa-image"></i></div>
+                            <h3>Upload New Poster</h3>
+                        </div>
+                        <form id="poster-form" novalidate>
+                            <div class="form-group"><label>Title *</label><input type="text" id="poster-title" required placeholder="Enter poster title"></div>
+                            <div class="form-group"><label>Description</label><textarea id="poster-description" rows="2" placeholder="Short description..."></textarea></div>
+                            <div class="form-group">
+                                <label>Poster Image *</label>
+                                <div class="image-upload-container" id="poster-image-container"><i class="fas fa-cloud-upload-alt"></i> Click or drag & drop poster image</div>
+                                <input type="file" id="poster-image-file" accept="image/*" style="display:none">
+                                <div class="media-preview" id="poster-image-preview"></div>
+                                <input type="hidden" id="poster-image-url">
+                            </div>
+                            <div class="progress-container" id="poster-progress"><div class="progress-bar" id="poster-progress-bar"></div><div class="progress-text" id="poster-progress-text">0%</div></div>
+                            <button type="submit" class="admin-btn" id="poster-upload-btn"><i class="fas fa-upload"></i> Upload Poster</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ======= UPLOAD IMAGE VIEW ======= -->
+                <div class="admin-view" id="view-upload-image">
+                    <div class="upload-section">
+                        <div class="upload-section-header">
+                            <div class="upload-section-icon green"><i class="fas fa-camera"></i></div>
+                            <h3>Upload New Image</h3>
+                        </div>
+                        <form id="image-form" novalidate>
+                            <div class="form-group"><label>Title *</label><input type="text" id="image-title" required placeholder="Enter image title"></div>
+                            <div class="form-group"><label>Description</label><textarea id="image-description" rows="2" placeholder="Short description..."></textarea></div>
+                            <div class="form-group">
+                                <label>Image *</label>
+                                <div class="image-upload-container" id="image-image-container"><i class="fas fa-cloud-upload-alt"></i> Click or drag & drop image</div>
+                                <input type="file" id="image-image-file" accept="image/*" style="display:none">
+                                <div class="media-preview" id="image-image-preview"></div>
+                                <input type="hidden" id="image-image-url">
+                            </div>
+                            <div class="progress-container" id="image-progress"><div class="progress-bar" id="image-progress-bar"></div><div class="progress-text" id="image-progress-text">0%</div></div>
+                            <button type="submit" class="admin-btn" id="image-upload-btn"><i class="fas fa-upload"></i> Upload Image</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ======= UPLOAD VIDEO VIEW ======= -->
+                <div class="admin-view" id="view-upload-video">
+                    <div class="upload-section">
+                        <div class="upload-section-header">
+                            <div class="upload-section-icon amber"><i class="fas fa-video"></i></div>
+                            <h3>Upload New Video</h3>
+                        </div>
+                        <form id="video-form" novalidate>
+                            <div class="form-group"><label>Title *</label><input type="text" id="video-title" required placeholder="Enter video title"></div>
+                            <div class="form-group"><label>Description</label><textarea id="video-description" rows="2" placeholder="Short description..."></textarea></div>
+                            <div class="form-group">
+                                <label>Video URL (YouTube / Vimeo / MP4) *</label>
+                                <input type="url" id="video-url" placeholder="https://youtube.com/watch?v=..." required>
+                            </div>
+                            <div class="form-group" id="video-preview-wrap" style="display:none;">
+                                <label>Preview</label>
+                                <div class="video-container" id="video-url-preview"></div>
+                            </div>
+                            <div class="progress-container" id="video-progress"><div class="progress-bar" id="video-progress-bar"></div><div class="progress-text" id="video-progress-text">0%</div></div>
+                            <button type="submit" class="admin-btn" id="video-upload-btn"><i class="fas fa-upload"></i> Upload Video</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ======= MANAGE CONTENT VIEW ======= -->
+                <div class="admin-view" id="view-manage">
+                    <div class="upload-section">
+                        <div class="upload-section-header">
+                            <div class="upload-section-icon blue"><i class="fas fa-th-large"></i></div>
+                            <h3>Manage Content</h3>
+                        </div>
+                        <!-- Filter tabs -->
+                        <div style="display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap;">
+                            <button class="category-btn active" data-manage-filter="all" style="font-size:0.8rem;padding:0.35rem 0.9rem;">All</button>
+                            <button class="category-btn" data-manage-filter="poster" style="font-size:0.8rem;padding:0.35rem 0.9rem;"><i class="fas fa-image"></i> Posters</button>
+                            <button class="category-btn" data-manage-filter="image" style="font-size:0.8rem;padding:0.35rem 0.9rem;"><i class="fas fa-camera"></i> Images</button>
+                            <button class="category-btn" data-manage-filter="video" style="font-size:0.8rem;padding:0.35rem 0.9rem;"><i class="fas fa-video"></i> Videos</button>
+                        </div>
+                        <div class="admin-content-grid" id="manage-grid"></div>
+                    </div>
+                </div>
+
+                <!-- ======= LOGO SETTINGS VIEW ======= -->
+                <div class="admin-view" id="view-logo">
+                    <div class="upload-section">
+                        <div class="upload-section-header">
+                            <div class="upload-section-icon purple"><i class="fas fa-paint-brush"></i></div>
+                            <h3>Website Logo Settings</h3>
+                        </div>
+                        <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:1.2rem;">
+                            Upload your website logo. It will appear in the <strong>top-right corner</strong> of the header on your website. Logo is saved in the browser (localStorage).
+                        </p>
+
+                        <!-- Upload Area -->
+                        <div class="logo-upload-area" id="logo-upload-area">
+                            <i class="fas fa-cloud-upload-alt" style="color:var(--purple)"></i>
+                            <p>Click or drag & drop your logo here</p>
+                            <small>PNG, JPG, SVG, WEBP · Max 2MB · Recommended: square (1:1)</small>
+                        </div>
+                        <input type="file" id="logo-file-input" accept="image/*" style="display:none">
+
+                        <!-- Preview -->
+                        <div id="logo-preview-section" style="display:none;">
+                            <div class="logo-preview-box">
+                                <img id="logo-preview-img" src="" alt="Logo Preview">
+                                <div class="preview-label">
+                                    <strong>Preview — Header Right Corner</strong>
+                                    This is how your logo will look in the top-right of the header.
+                                </div>
+                            </div>
+                            <div class="logo-action-btns">
+                                <button class="btn-save-logo" id="save-logo-btn"><i class="fas fa-save"></i> Save Logo</button>
+                                <button class="btn-remove-logo" id="remove-logo-btn"><i class="fas fa-trash"></i> Remove Logo</button>
+                            </div>
+                        </div>
+
+                        <!-- Current Logo Status -->
+                        <div id="current-logo-status" style="margin-top:1rem;padding:0.8rem 1rem;background:var(--light);border-radius:var(--radius-sm);font-size:0.85rem;color:var(--text-muted);">
+                            <i class="fas fa-info-circle"></i> No logo currently set.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ======= SETTINGS VIEW ======= -->
+                <div class="admin-view" id="view-settings">
+                    <div class="upload-section">
+                        <div class="upload-section-header">
+                            <div class="upload-section-icon blue"><i class="fas fa-cog"></i></div>
+                            <h3>Panel Settings</h3>
+                        </div>
+                        <div class="settings-grid">
+                            <div class="settings-item">
+                                <h4><i class="fas fa-moon" style="color:var(--purple)"></i> Dark Mode</h4>
+                                <p>Toggle dark theme for the website and admin panel.</p>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="setting-dark-mode">
+                                    <label class="toggle-label" for="setting-dark-mode">Enable Dark Mode</label>
+                                </div>
+                            </div>
+                            <div class="settings-item">
+                                <h4><i class="fas fa-database" style="color:var(--secondary)"></i> Cache</h4>
+                                <p>Content is cached for 5 minutes to improve performance.</p>
+                                <button class="admin-btn" style="width:auto;padding:0.5rem 1rem;font-size:0.82rem;" onclick="window.retryLoad()">
+                                    <i class="fas fa-sync-alt"></i> Force Refresh Cache
+                                </button>
+                            </div>
+                            <div class="settings-item">
+                                <h4><i class="fas fa-shield-alt" style="color:var(--success)"></i> Admin Info</h4>
+                                <p>Currently logged in as Super Admin.</p>
+                                <div style="font-size:0.82rem;color:var(--text-muted);">
+                                    <div><strong>Email:</strong> ethwemaketoppers@gmail.com</div>
+                                    <div style="margin-top:4px;"><strong>Session:</strong> Active</div>
+                                </div>
+                            </div>
+                            <div class="settings-item">
+                                <h4><i class="fas fa-info-circle" style="color:var(--warning)"></i> About</h4>
+                                <p>Education Toppers Hub Admin Panel v2.0</p>
+                                <div style="font-size:0.78rem;color:var(--text-muted);">
+                                    Powered by Firebase Firestore<br>
+                                    Built with vanilla HTML/CSS/JS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /admin-content -->
+        </div><!-- /admin-main -->
+    </div><!-- /admin-layout -->
+</div><!-- /admin-panel -->
+
+<!-- Firebase SDK -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCzCp_EGGmSolCSy8iQNrQAE-vGO8vTKIo",
+        authDomain: "education-toppers-hub-4d045.firebaseapp.com",
+        databaseURL: "https://education-toppers-hub-4d045-default-rtdb.firebaseio.com",
+        projectId: "education-toppers-hub-4d045",
+        storageBucket: "education-toppers-hub-4d045.firebasestorage.app",
+        messagingSenderId: "1065320525597",
+        appId: "1:1065320525597:web:ca166ff0d6e257492f3bf4",
+        measurementId: "G-QTF6FHGEFZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window.__firebase = { db, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp };
+    // Flag so late-loading scripts can check synchronously
+    window.__firebaseReady = true;
+    document.dispatchEvent(new CustomEvent('firebase-ready'));
+</script>
+
+<!-- Main App Script -->
+<script>
+(function() {
+    'use strict';
+
+    /* ── CONSTANTS ── */
+    const ADMIN_EMAIL    = 'ethwemaketoppers@gmail.com';
+    const ADMIN_PASSWORD = 'vidhan kumar';
+    const CACHE_TTL      = 5 * 60 * 1000;
+    const MAX_RETRIES    = 3;
+    const RETRY_DELAY    = 2000; // 2s between retries
+
+    /* ── STATE ── */
+    let images = [], videos = [], posters = [];
+    let isLoading = false;
+    let isAdmin = false;
+    const cache = { data: {}, ts: null };
+    let activityLog = [];
+    let currentManageFilter = 'all';
+
+    /* ── DOM REFS ── */
+    const $ = id => document.getElementById(id);
+    const threeLineMenu     = $('three-line-menu');
+    const menuDropdown      = $('menu-dropdown');
+    const adminModal        = $('admin-modal');
+    const closeModalBtn     = $('close-modal');
+    const adminLoginForm    = $('admin-login-form');
+    const adminPanel        = $('admin-panel');
+    const logoutBtn         = $('logout-btn');
+    const notification      = $('notification');
+    const searchBar         = $('search-bar');
+    const searchClear       = $('search-clear');
+    const backToTop         = $('back-to-top');
+    const categories        = $('categories');
+    const imagesGrid        = $('images-grid');
+    const videosGrid        = $('videos-grid');
+    const postersGrid       = $('posters-grid');
+    const imageForm         = $('image-form');
+    const videoForm         = $('video-form');
+    const posterForm        = $('poster-form');
+    const posterUploadBtn   = $('poster-upload-btn');
+    const imageUploadBtn    = $('image-upload-btn');
+    const videoUploadBtn    = $('video-upload-btn');
+    const posterProgress    = $('poster-progress');
+    const posterProgressBar = $('poster-progress-bar');
+    const posterProgressText= $('poster-progress-text');
+    const imageProgress     = $('image-progress');
+    const imageProgressBar  = $('image-progress-bar');
+    const imageProgressText = $('image-progress-text');
+    const videoProgress     = $('video-progress');
+    const videoProgressBar  = $('video-progress-bar');
+    const videoProgressText = $('video-progress-text');
+    const imageImgContainer = $('image-image-container');
+    const imageImgFile      = $('image-image-file');
+    const imageImgPreview   = $('image-image-preview');
+    const imageImgUrl       = $('image-image-url');
+    const posterImgContainer= $('poster-image-container');
+    const posterImgFile     = $('poster-image-file');
+    const posterImgPreview  = $('poster-image-preview');
+    const posterImgUrl      = $('poster-image-url');
+    const retryBanner       = $('retry-banner');
+
+    /* ── NOTIFICATION ── */
+    let notifTimer;
+    function showNotification(msg, type = 'info') {
+        clearTimeout(notifTimer);
+        const icons = { success: 'fa-check-circle', error: 'fa-times-circle', info: 'fa-info-circle', warning: 'fa-exclamation-triangle' };
+        notification.innerHTML = `<i class="fas ${icons[type] || 'fa-info-circle'}"></i> ${msg}`;
+        notification.className = `notification ${type}`;
+        notification.style.display = 'flex';
+        notifTimer = setTimeout(() => { notification.style.display = 'none'; }, 3500);
+    }
+
+    /* ── ACTIVITY LOG ── */
+    function logActivity(msg, color = 'blue') {
+        const now = new Date();
+        activityLog.unshift({ msg, color, time: now.toLocaleTimeString() });
+        if (activityLog.length > 20) activityLog.pop();
+        if (isAdmin) renderActivityLog();
+    }
+
+    function renderActivityLog() {
+        const list = $('activity-list');
+        if (!list) return;
+        if (!activityLog.length) {
+            list.innerHTML = '<li class="activity-item"><div class="activity-dot" style="background:var(--border)"></div><div><div class="activity-text">No recent activity.</div></div></li>';
+            return;
+        }
+        list.innerHTML = activityLog.slice(0, 8).map(a => `
+            <li class="activity-item">
+                <div class="activity-dot ${a.color}"></div>
+                <div>
+                    <div class="activity-text">${escHtml(a.msg)}</div>
+                    <div class="activity-time">${a.time}</div>
+                </div>
+            </li>`).join('');
+    }
+
+    /* ── LIVE TIME ── */
+    function updateLiveTime() {
+        const el = $('live-time');
+        if (!el) return;
+        el.textContent = new Date().toLocaleTimeString();
+    }
+    setInterval(updateLiveTime, 1000);
+    updateLiveTime();
+
+    /* ── SKELETON ── */
+    const skelHTML = Array(3).fill(`
+        <div class="skeleton-card">
+            <div class="skeleton-img skeleton"></div>
+            <div class="skeleton-body">
+                <div class="skeleton-title skeleton"></div>
+                <div class="skeleton-text skeleton"></div>
+            </div>
+        </div>`).join('');
+
+    function showSkeletons() {
+        [postersGrid, imagesGrid, videosGrid].forEach(g => {
+            if (!g.children.length || g.querySelector('.skeleton-card')) return;
+            g.innerHTML = skelHTML;
+        });
+    }
+
+    /* ── STATS ── */
+    function updateStats() {
+        const total = posters.length + images.length + videos.length;
+        $('stat-posters').textContent = posters.length;
+        $('stat-images').textContent  = images.length;
+        $('stat-videos').textContent  = videos.length;
+        if (isAdmin) {
+            $('dash-poster-count').textContent = posters.length;
+            $('dash-image-count').textContent  = images.length;
+            $('dash-video-count').textContent  = videos.length;
+            $('dash-total-count').textContent  = total;
+            $('sb-total-badge').textContent    = total;
+            // Content breakdown bars
+            const max = Math.max(1, posters.length, images.length, videos.length);
+            $('bar-posters').style.width = (posters.length / max * 100) + '%';
+            $('bar-images').style.width  = (images.length  / max * 100) + '%';
+            $('bar-videos').style.width  = (videos.length  / max * 100) + '%';
+            $('bcount-posters').textContent = posters.length;
+            $('bcount-images').textContent  = images.length;
+            $('bcount-videos').textContent  = videos.length;
+            renderMiniChart();
+        }
+    }
+
+    function renderMiniChart() {
+        const chart = $('mini-chart');
+        if (!chart) return;
+        // Combine all items sorted by timestamp
+        const all = [
+            ...posters.map(x => ({ ...x, type: 'poster' })),
+            ...images.map(x => ({ ...x, type: 'image' })),
+            ...videos.map(x => ({ ...x, type: 'video' }))
+        ].sort((a, b) => {
+            const ta = a.timestamp?.seconds || 0;
+            const tb = b.timestamp?.seconds || 0;
+            return ta - tb;
+        }).slice(-7);
+
+        const colors = { poster: 'var(--secondary)', image: 'var(--success)', video: 'var(--warning)' };
+        const maxH = 60;
+        chart.innerHTML = all.map((item, i) => {
+            const h = Math.max(12, Math.round((i + 1) / all.length * maxH));
+            return `<div class="mini-bar" style="background:${colors[item.type]};height:${h}px;opacity:0.75" title="${escHtml(item.title)} (${item.type})"></div>`;
+        }).join('') || '<div style="color:var(--text-muted);font-size:0.8rem;width:100%">No data yet</div>';
+    }
+
+    /* ── ROBUST FIREBASE LOAD with retries ── */
+    async function loadCollectionWithRetry(name, retries = MAX_RETRIES) {
+        const { db, collection, getDocs, query, orderBy } = window.__firebase;
+        for (let attempt = 1; attempt <= retries; attempt++) {
+            try {
+                const q = query(collection(db, name), orderBy('timestamp', 'desc'));
+                const snap = await getDocs(q);
+                return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+            } catch (err) {
+                const isLast = attempt === retries;
+                console.warn(`[${name}] Attempt ${attempt}/${retries} failed:`, err.message);
+                if (isLast) throw err;
+                await new Promise(r => setTimeout(r, RETRY_DELAY * attempt));
+            }
+        }
+    }
+
+    async function loadAll(forceRefresh = false) {
+        if (isLoading) return;
+        const now = Date.now();
+        if (!forceRefresh && cache.ts && (now - cache.ts) < CACHE_TTL && cache.data.images) {
+            ({ images, videos, posters } = cache.data);
+            renderAll();
+            updateStats();
+            if (isAdmin) { renderAdminManageGrid(); renderActivityLog(); }
+            retryBanner.style.display = 'none';
+            return;
+        }
+
+        isLoading = true;
+        showSkeletons();
+        retryBanner.style.display = 'none';
+
+        try {
+            // Load each collection independently so partial failure doesn't block all
+            const results = await Promise.allSettled([
+                loadCollectionWithRetry('images'),
+                loadCollectionWithRetry('videos'),
+                loadCollectionWithRetry('posters')
+            ]);
+
+            let anyFailed = false;
+            if (results[0].status === 'fulfilled') images  = results[0].value;
+            else { images = cache.data.images || []; anyFailed = true; console.error('Images load failed:', results[0].reason); }
+            if (results[1].status === 'fulfilled') videos  = results[1].value;
+            else { videos = cache.data.videos || []; anyFailed = true; console.error('Videos load failed:', results[1].reason); }
+            if (results[2].status === 'fulfilled') posters = results[2].value;
+            else { posters = cache.data.posters || []; anyFailed = true; console.error('Posters load failed:', results[2].reason); }
+
+            cache.data = { images, videos, posters };
+            cache.ts = Date.now();
+            renderAll();
+            updateStats();
+            if (isAdmin) { renderAdminManageGrid(); renderActivityLog(); }
+
+            if (anyFailed) {
+                showNotification('Some content failed to load — showing cached data', 'warning');
+                logActivity('Partial load error — some collections failed', 'amber');
+            } else {
+                logActivity(`Content loaded: ${posters.length} posters, ${images.length} images, ${videos.length} videos`, 'green');
+            }
+
+        } catch (err) {
+            console.error('Load error:', err);
+            if (cache.data.images) {
+                ({ images, videos, posters } = cache.data);
+                renderAll();
+                showNotification('Network issue — showing cached content', 'warning');
+                logActivity('Load failed — using cached data', 'amber');
+            } else {
+                [postersGrid, imagesGrid, videosGrid].forEach(g => {
+                    g.innerHTML = `<div class="no-content"><i class="fas fa-exclamation-circle" style="color:var(--accent-red)"></i>Failed to load content.</div>`;
+                });
+                $('retry-banner-msg').textContent = 'Content failed to load: ' + err.message;
+                retryBanner.style.display = 'flex';
+                showNotification('Load failed — please retry', 'error');
+                logActivity('Complete load failure: ' + err.message, 'red');
+            }
+        } finally {
+            isLoading = false;
+        }
+    }
+
+    window.retryLoad = () => {
+        showNotification('Refreshing content...', 'info');
+        loadAll(true);
+    };
+
+    /* ── YOUTUBE URL PARSER ── */
+    function getYouTubeId(url) {
+        const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+        return m ? m[1] : null;
+    }
+
+    /* ── ESCAPE HTML ── */
+    function escHtml(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    /* ── RENDER FUNCTIONS ── */
+    function renderGrid(grid, items, renderFn) {
+        if (!items.length) {
+            grid.innerHTML = '<div class="no-content"><i class="fas fa-inbox"></i>No content yet.</div>';
+            return;
+        }
+        const frag = document.createDocumentFragment();
+        items.forEach((item, i) => frag.appendChild(renderFn(item, i)));
+        grid.innerHTML = '';
+        grid.appendChild(frag);
+    }
+
+    function makeDeleteBtn(type, id) {
+        if (!isAdmin) return '';
+        return `<button class="delete-content-btn" data-type="${escHtml(type)}" data-id="${escHtml(id)}" title="Delete"><i class="fas fa-trash"></i></button>`;
+    }
+
+    function renderImageCard(a, i) {
+        const card = document.createElement('div');
+        card.className = 'content-card';
+        card.style.animationDelay = `${i * 0.04}s`;
+        const imgSrc = escHtml(a.imageUrl) || 'https://placehold.co/300x200?text=Image';
+        const imgTitle = escHtml(a.title);
+        card.innerHTML = `
+            ${makeDeleteBtn('image', a.id)}
+            <div class="card-img-wrap">
+                <img src="${imgSrc}" alt="${imgTitle}" loading="lazy"
+                    data-lightbox="${imgSrc}" data-caption="${imgTitle}"
+                    onerror="this.src='https://placehold.co/300x200?text=Image'">
+            </div>
+            <div class="content-info">
+                <h3>${imgTitle}</h3>
+                ${a.description ? `<p>${escHtml(a.description)}</p>` : ''}
+            </div>`;
+        return card;
+    }
+
+    function renderVideoCard(v, i) {
+        const card = document.createElement('div');
+        card.className = 'content-card';
+        card.style.animationDelay = `${i * 0.04}s`;
+        let mediaHtml = '';
+        if (v.videoUrl) {
+            const ytId = getYouTubeId(v.videoUrl);
+            if (ytId) {
+                mediaHtml = `<div class="video-container"><iframe src="https://www.youtube.com/embed/${ytId}?rel=0" allowfullscreen loading="lazy" title="${escHtml(v.title)}"></iframe></div>`;
+            } else {
+                mediaHtml = `<div class="video-container"><video src="${escHtml(v.videoUrl)}" controls preload="metadata"></video></div>`;
+            }
+        }
+        card.innerHTML = `
+            ${makeDeleteBtn('video', v.id)}
+            ${mediaHtml}
+            <div class="content-info">
+                <h3>${escHtml(v.title)}</h3>
+                ${v.description ? `<p>${escHtml(v.description)}</p>` : ''}
+            </div>`;
+        return card;
+    }
+
+    function renderPosterCard(p, i) {
+        const card = document.createElement('div');
+        card.className = 'content-card';
+        card.style.animationDelay = `${i * 0.04}s`;
+        const imgSrc = escHtml(p.imageUrl) || 'https://placehold.co/300x200?text=Poster';
+        const imgTitle = escHtml(p.title);
+        card.innerHTML = `
+            ${makeDeleteBtn('poster', p.id)}
+            <div class="card-img-wrap">
+                <img src="${imgSrc}" alt="${imgTitle}" loading="lazy"
+                    data-lightbox="${imgSrc}" data-caption="${imgTitle}"
+                    onerror="this.src='https://placehold.co/300x200?text=Poster'">
+            </div>
+            <div class="content-info">
+                <h3>${imgTitle}</h3>
+                ${p.description ? `<p>${escHtml(p.description)}</p>` : ''}
+            </div>`;
+        return card;
+    }
+
+    function renderImages(list = images)   { renderGrid(imagesGrid, list, renderImageCard); }
+    function renderVideos(list = videos)   { renderGrid(videosGrid, list, renderVideoCard); }
+    function renderPosters(list = posters) { renderGrid(postersGrid, list, renderPosterCard); }
+    function renderAll() { renderPosters(); renderImages(); renderVideos(); }
+
+    /* ── ADMIN MANAGE GRID ── */
+    function renderAdminManageGrid() {
+        const grid = $('manage-grid');
+        if (!grid) return;
+        let allItems = [];
+        if (currentManageFilter === 'all' || currentManageFilter === 'poster') {
+            allItems = allItems.concat(posters.map(x => ({ ...x, _type: 'poster' })));
+        }
+        if (currentManageFilter === 'all' || currentManageFilter === 'image') {
+            allItems = allItems.concat(images.map(x => ({ ...x, _type: 'image' })));
+        }
+        if (currentManageFilter === 'all' || currentManageFilter === 'video') {
+            allItems = allItems.concat(videos.map(x => ({ ...x, _type: 'video' })));
+        }
+
+        if (!allItems.length) {
+            grid.innerHTML = '<div class="no-content"><i class="fas fa-inbox"></i>No content found.</div>';
+            return;
+        }
+
+        const typeColors = { poster: '#2563eb', image: '#10b981', video: '#f59e0b' };
+        grid.innerHTML = allItems.map(item => {
+            const thumb = item.imageUrl
+                ? `<img src="${escHtml(item.imageUrl)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'video-icon\\'><i class=\\'fas fa-image\\'></i></div>'">`
+                : `<div class="video-icon"><i class="fas fa-${item._type === 'video' ? 'play-circle' : 'image'}"></i></div>`;
+            return `
+                <div class="admin-item-card">
+                    <div class="admin-type-badge" style="background:${typeColors[item._type]}20;color:${typeColors[item._type]};border:1px solid ${typeColors[item._type]}40">${item._type}</div>
+                    <div class="admin-item-thumb">${thumb}</div>
+                    <div class="admin-item-info">
+                        <h4 title="${escHtml(item.title)}">${escHtml(item.title)}</h4>
+                        <p title="${escHtml(item.description || '')}">
+                            ${item._type === 'video' && item.videoUrl ? item.videoUrl.substring(0, 30) + '…' : (escHtml(item.description) || 'No description')}
+                        </p>
+                        <button class="admin-delete-btn" data-type="${item._type}" data-id="${escHtml(item.id)}">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>`;
+        }).join('');
+    }
+
+    /* ── MANAGE FILTER ── */
+    document.addEventListener('click', e => {
+        const btn = e.target.closest('[data-manage-filter]');
+        if (!btn) return;
+        document.querySelectorAll('[data-manage-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentManageFilter = btn.dataset.manageFilter;
+        renderAdminManageGrid();
+    });
+
+    /* ── DELETE ── */
+    async function deleteContent(type, id) {
+        if (!confirm(`Delete this ${type}?`)) return;
+        const { db, deleteDoc, doc } = window.__firebase;
+        try {
+            await deleteDoc(doc(db, type + 's', id));
+            if (type === 'image')  images  = images.filter(x => x.id !== id);
+            if (type === 'video')  videos  = videos.filter(x => x.id !== id);
+            if (type === 'poster') posters = posters.filter(x => x.id !== id);
+            cache.data = { images, videos, posters };
+            renderAll();
+            if (isAdmin) { renderAdminManageGrid(); updateStats(); }
+            showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} deleted successfully`, 'success');
+            logActivity(`Deleted ${type}: "${id.substring(0, 12)}…"`, 'red');
+        } catch (err) {
+            console.error(err);
+            showNotification('Delete failed: ' + err.message, 'error');
+            logActivity('Delete failed: ' + err.message, 'red');
+        }
+    }
+    window.deleteContent = deleteContent;
+
+    document.addEventListener('click', e => {
+        const btn = e.target.closest('[data-type][data-id]');
+        if (btn && isAdmin) deleteContent(btn.dataset.type, btn.dataset.id);
+    });
+
+    /* ── IMAGE UPLOAD HANDLER ── */
+    function setupImageUpload(container, fileInput, previewEl, hiddenInput, pBar, pText, pContainer) {
+        if (!container) return;
+        container.addEventListener('click', () => fileInput.click());
+        container.addEventListener('dragover', e => { e.preventDefault(); container.classList.add('dragover'); });
+        container.addEventListener('dragleave', () => container.classList.remove('dragover'));
+        container.addEventListener('drop', e => {
+            e.preventDefault(); container.classList.remove('dragover');
+            if (e.dataTransfer.files?.[0]) handleFile(e.dataTransfer.files[0], previewEl, hiddenInput, pBar, pText, pContainer);
+        });
+        fileInput.addEventListener('change', function() {
+            if (this.files?.[0]) handleFile(this.files[0], previewEl, hiddenInput, pBar, pText, pContainer);
+        });
+    }
+
+    function handleFile(file, previewEl, hiddenInput, pBar, pText, pContainer) {
+        if (!file.type.startsWith('image/')) { showNotification('Please select an image file', 'error'); return; }
+        if (file.size > 5 * 1024 * 1024) { showNotification('Image must be under 5MB', 'error'); return; }
+        const reader = new FileReader();
+        pContainer.style.display = 'block';
+        pBar.style.width = '0%'; pText.textContent = '0%';
+        reader.onprogress = e => {
+            if (e.lengthComputable) {
+                const pct = Math.round((e.loaded / e.total) * 80 + 10);
+                pBar.style.width = pct + '%'; pText.textContent = pct + '%';
+            }
         };
+        reader.onload = e => {
+            pBar.style.width = '100%'; pText.textContent = '100%';
+            previewEl.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+            hiddenInput.value = e.target.result;
+            setTimeout(() => { pContainer.style.display = 'none'; }, 600);
+        };
+        reader.onerror = () => { showNotification('Error reading file', 'error'); pContainer.style.display = 'none'; };
+        reader.readAsDataURL(file);
+    }
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+    setupImageUpload(posterImgContainer, posterImgFile, posterImgPreview, posterImgUrl, posterProgressBar, posterProgressText, posterProgress);
+    setupImageUpload(imageImgContainer, imageImgFile, imageImgPreview, imageImgUrl, imageProgressBar, imageProgressText, imageProgress);
 
-        window.db = db;
-        window.collection = collection;
-        window.addDoc = addDoc;
-        window.getDocs = getDocs;
-        window.deleteDoc = deleteDoc;
-        window.doc = doc;
-        window.query = query;
-        window.orderBy = orderBy;
-        window.serverTimestamp = serverTimestamp;
-        
-        console.log("✅ Firebase initialized");
-    </script>
+    /* ── VIDEO PREVIEW ── */
+    $('video-url').addEventListener('input', function() {
+        const url = this.value.trim();
+        const ytId = getYouTubeId(url);
+        const preview = $('video-url-preview');
+        const wrap = $('video-preview-wrap');
+        if (ytId) {
+            preview.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?rel=0" allowfullscreen></iframe>`;
+            wrap.style.display = 'block';
+        } else {
+            preview.innerHTML = '';
+            wrap.style.display = 'none';
+        }
+    });
 
-    <!-- Main Script -->
-    <script>
-        (function() {
-            const ADMIN_EMAIL = 'ethwemaketoppers@gmail.com';
-            const ADMIN_PASSWORD = 'vidhan kumar';
-
-            // DOM elements
-            const threeLineMenu = document.getElementById('three-line-menu');
-            const menuDropdown = document.getElementById('menu-dropdown');
-            const adminModal = document.getElementById('admin-modal');
-            const closeModal = document.getElementById('close-modal');
-            const adminLoginForm = document.getElementById('admin-login-form');
-            const adminPanel = document.getElementById('admin-panel');
-            const logoutBtn = document.getElementById('logout-btn');
-            const notification = document.getElementById('notification');
-            const searchBar = document.getElementById('search-bar');
-            const backToTop = document.getElementById('back-to-top');
-            const categories = document.getElementById('categories');
-
-            // Grids
-            const imagesGrid = document.getElementById('images-grid');
-            const videosGrid = document.getElementById('videos-grid');
-            const postersGrid = document.getElementById('posters-grid');
-            const adminImagesGrid = document.getElementById('admin-images-grid');
-            const adminVideosGrid = document.getElementById('admin-videos-grid');
-            const adminPostersGrid = document.getElementById('admin-posters-grid');
-
-            // Forms
-            const imageForm = document.getElementById('image-form');
-            const videoForm = document.getElementById('video-form');
-            const posterForm = document.getElementById('poster-form');
-
-            // Upload buttons
-            const posterUploadBtn = document.getElementById('poster-upload-btn');
-            const imageUploadBtn = document.getElementById('image-upload-btn');
-            const videoUploadBtn = document.getElementById('video-upload-btn');
-
-            // Progress elements
-            const posterProgress = document.getElementById('poster-progress');
-            const posterProgressBar = document.getElementById('poster-progress-bar');
-            const posterProgressText = document.getElementById('poster-progress-text');
-            
-            const imageProgress = document.getElementById('image-progress');
-            const imageProgressBar = document.getElementById('image-progress-bar');
-            const imageProgressText = document.getElementById('image-progress-text');
-            
-            const videoProgress = document.getElementById('video-progress');
-            const videoProgressBar = document.getElementById('video-progress-bar');
-            const videoProgressText = document.getElementById('video-progress-text');
-
-            // Upload containers
-            const imageImgContainer = document.getElementById('image-image-container');
-            const imageImgFile = document.getElementById('image-image-file');
-            const imageImgPreview = document.getElementById('image-image-preview');
-            const imageImgUrl = document.getElementById('image-image-url');
-
-            const posterImgContainer = document.getElementById('poster-image-container');
-            const posterImgFile = document.getElementById('poster-image-file');
-            const posterImgPreview = document.getElementById('poster-image-preview');
-            const posterImgUrl = document.getElementById('poster-image-url');
-
-            // Data arrays
-            let images = [];
-            let videos = [];
-            let posters = [];
-            let isLoading = false;
-
-            // Cache
-            const cache = {
-                images: null,
-                videos: null,
-                posters: null,
-                timestamp: null
-            };
-
-            function showNotification(msg, type) {
-                notification.textContent = msg;
-                notification.className = `notification ${type}`;
-                notification.style.display = 'block';
-                setTimeout(() => notification.style.display = 'none', 3000);
-            }
-
-            function showSkeletonLoad() {
-                const skeletonHTML = Array(3).fill(0).map(() => `
-                    <div class="skeleton-card">
-                        <div class="skeleton-image skeleton"></div>
-                        <div class="skeleton-title skeleton"></div>
-                        <div class="skeleton-text skeleton"></div>
-                    </div>
-                `).join('');
-                
-                if (postersGrid.children.length === 0 || postersGrid.innerHTML.includes('loading')) {
-                    postersGrid.innerHTML = skeletonHTML;
-                }
-                if (imagesGrid.children.length === 0 || imagesGrid.innerHTML.includes('loading')) {
-                    imagesGrid.innerHTML = skeletonHTML;
-                }
-                if (videosGrid.children.length === 0 || videosGrid.innerHTML.includes('loading')) {
-                    videosGrid.innerHTML = skeletonHTML;
-                }
-            }
-
-            async function loadAll() {
-                if (isLoading) return;
-                isLoading = true;
-                
-                showSkeletonLoad();
-                
-                try {
-                    await Promise.all([
-                        loadImages(),
-                        loadVideos(),
-                        loadPosters()
-                    ]);
-                    
-                    cache.images = images;
-                    cache.videos = videos;
-                    cache.posters = posters;
-                    cache.timestamp = Date.now();
-                    
-                    renderPosters(); 
-                    renderImages(); 
-                    renderVideos();
-                    
-                    if (adminPanel.style.display === 'block') { 
-                        renderAdminPosters(); 
-                        renderAdminImages(); 
-                        renderAdminVideos(); 
-                    }
-                } catch (e) {
-                    console.error('Load failed:', e);
-                    
-                    if (cache.images && cache.videos && cache.posters) {
-                        images = cache.images;
-                        videos = cache.videos;
-                        posters = cache.posters;
-                        renderPosters(); 
-                        renderImages(); 
-                        renderVideos();
-                        showNotification('Showing cached data', 'info');
-                    } else {
-                        showNotification('Failed to load data. Please refresh.', 'error');
-                        postersGrid.innerHTML = '<div class="no-content">Failed to load posters</div>';
-                        imagesGrid.innerHTML = '<div class="no-content">Failed to load images</div>';
-                        videosGrid.innerHTML = '<div class="no-content">Failed to load videos</div>';
-                    }
-                } finally {
-                    isLoading = false;
-                }
-            }
-
-            async function loadImages() {
-                try {
-                    const q = query(collection(db, 'images'), orderBy('timestamp', 'desc'));
-                    const snap = await getDocs(q);
-                    images = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                    return images;
-                } catch (e) { 
-                    console.error('Error loading images:', e); 
-                    throw e;
-                }
-            }
-            
-            async function loadVideos() {
-                try {
-                    const q = query(collection(db, 'videos'), orderBy('timestamp', 'desc'));
-                    const snap = await getDocs(q);
-                    videos = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                    return videos;
-                } catch (e) { 
-                    console.error('Error loading videos:', e); 
-                    throw e;
-                }
-            }
-            
-            async function loadPosters() {
-                try {
-                    const q = query(collection(db, 'posters'), orderBy('timestamp', 'desc'));
-                    const snap = await getDocs(q);
-                    posters = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-                    return posters;
-                } catch (e) { 
-                    console.error('Error loading posters:', e); 
-                    throw e;
-                }
-            }
-
-            async function deleteContent(type, id) {
-                if (!confirm(`Delete this ${type}?`)) return;
-                
-                try {
-                    await deleteDoc(doc(db, type + 's', id));
-                    showNotification(`${type} deleted successfully`, 'success');
-                    
-                    if (type === 'image') images = images.filter(i => i.id !== id);
-                    if (type === 'video') videos = videos.filter(v => v.id !== id);
-                    if (type === 'poster') posters = posters.filter(p => p.id !== id);
-                    
-                    cache.images = images;
-                    cache.videos = videos;
-                    cache.posters = posters;
-                    
-                    renderPosters(); 
-                    renderImages(); 
-                    renderVideos();
-                    
-                    if (adminPanel.style.display === 'block') { 
-                        renderAdminPosters(); 
-                        renderAdminImages(); 
-                        renderAdminVideos(); 
-                    }
-                } catch (err) {
-                    console.error('Delete error:', err);
-                    showNotification(`Error deleting ${type}`, 'error');
-                }
-            }
-
-            function renderImages(filtered = images) {
-                imagesGrid.innerHTML = '';
-                if (!filtered.length) { 
-                    imagesGrid.innerHTML = '<div class="no-content">No images</div>'; 
-                    return; 
-                }
-                
-                const fragment = document.createDocumentFragment();
-                
-                filtered.forEach((a, index) => {
-                    const card = document.createElement('div'); 
-                    card.className = 'content-card';
-                    card.style.animationDelay = `${index * 0.05}s`;
-                    
-                    const deleteBtn = adminPanel.style.display === 'block' ? 
-                        `<button class="delete-content-btn" onclick="window.deleteContent('image', '${a.id}')"><i class="fas fa-trash"></i></button>` : '';
-                    
-                    card.innerHTML = `${deleteBtn}<img src="${a.imageUrl || 'https://via.placeholder.com/300x200?text=Image'}" alt="${a.title}" loading="lazy">
-                        <div class="content-info"><h3>${a.title}</h3><p>${a.description || ''}</p></div>`;
-                    fragment.appendChild(card);
-                });
-                
-                imagesGrid.appendChild(fragment);
-            }
-            
-            function renderVideos(filtered = videos) {
-                videosGrid.innerHTML = '';
-                if (!filtered.length) { 
-                    videosGrid.innerHTML = '<div class="no-content">No videos</div>'; 
-                    return; 
-                }
-                
-                const fragment = document.createDocumentFragment();
-                
-                filtered.forEach((v, index) => {
-                    const card = document.createElement('div'); 
-                    card.className = 'content-card';
-                    card.style.animationDelay = `${index * 0.05}s`;
-                    
-                    const deleteBtn = adminPanel.style.display === 'block' ? 
-                        `<button class="delete-content-btn" onclick="window.deleteContent('video', '${v.id}')"><i class="fas fa-trash"></i></button>` : '';
-                    
-                    let videoHtml = '';
-                    if (v.videoUrl) {
-                        if (v.videoUrl.includes('youtube') || v.videoUrl.includes('youtu.be')) {
-                            let videoId = '';
-                            if (v.videoUrl.includes('youtube.com/watch?v=')) {
-                                videoId = v.videoUrl.split('v=')[1]?.split('&')[0];
-                            } else if (v.videoUrl.includes('youtu.be/')) {
-                                videoId = v.videoUrl.split('youtu.be/')[1]?.split('?')[0];
-                            }
-                            
-                            if (videoId) {
-                                videoHtml = `<div class="video-container">
-                                    <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy" title="${v.title}"></iframe>
-                                </div>`;
-                            } else {
-                                videoHtml = `<div class="video-container">
-                                    <video src="${v.videoUrl}" controls preload="metadata" title="${v.title}"></video>
-                                </div>`;
-                            }
-                        } else {
-                            videoHtml = `<div class="video-container">
-                                <video src="${v.videoUrl}" controls preload="metadata" title="${v.title}"></video>
-                            </div>`;
-                        }
-                    }
-                    
-                    card.innerHTML = `${deleteBtn}${videoHtml}<div class="content-info"><h3>${v.title}</h3><p>${v.description || ''}</p></div>`;
-                    fragment.appendChild(card);
-                });
-                
-                videosGrid.appendChild(fragment);
-            }
-            
-            function renderPosters(filtered = posters) {
-                postersGrid.innerHTML = '';
-                if (!filtered.length) { 
-                    postersGrid.innerHTML = '<div class="no-content">No posters</div>'; 
-                    return; 
-                }
-                
-                const fragment = document.createDocumentFragment();
-                
-                filtered.forEach((p, index) => {
-                    const card = document.createElement('div'); 
-                    card.className = 'content-card poster-card';
-                    card.style.animationDelay = `${index * 0.05}s`;
-                    
-                    const deleteBtn = adminPanel.style.display === 'block' ? 
-                        `<button class="delete-content-btn" onclick="window.deleteContent('poster', '${p.id}')"><i class="fas fa-trash"></i></button>` : '';
-                    
-                    card.innerHTML = `${deleteBtn}<img src="${p.imageUrl || 'https://via.placeholder.com/300x200?text=Poster'}" alt="${p.title}" loading="lazy"><div class="content-info"><h3>${p.title}</h3><p>${p.description || ''}</p></div>`;
-                    fragment.appendChild(card);
-                });
-                
-                postersGrid.appendChild(fragment);
-            }
-
-            function renderAdminImages() {
-                if (!adminImagesGrid) return;
-                adminImagesGrid.innerHTML = images.map(a => `
-                    <div class="content-card" style="aspect-ratio: auto;">
-                        <img src="${a.imageUrl}" style="height:100px; object-fit: cover;" loading="lazy" alt="${a.title}">
-                        <div class="content-info">
-                            <h4>${a.title}</h4>
-                            <button class="admin-delete-btn" onclick="window.deleteContent('image', '${a.id}')">
-                                <i class="fas fa-trash"></i> Delete
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-            
-            function renderAdminVideos() {
-                if (!adminVideosGrid) return;
-                adminVideosGrid.innerHTML = videos.map(v => `
-                    <div class="content-card" style="aspect-ratio: auto;">
-                        <div class="content-info">
-                            <h4>${v.title}</h4>
-                            <p style="font-size:0.8rem; color:#666;">${v.videoUrl.substring(0,30)}...</p>
-                            <button class="admin-delete-btn" onclick="window.deleteContent('video', '${v.id}')">
-                                <i class="fas fa-trash"></i> Delete
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-            
-            function renderAdminPosters() {
-                if (!adminPostersGrid) return;
-                adminPostersGrid.innerHTML = posters.map(p => `
-                    <div class="content-card" style="aspect-ratio: auto;">
-                        <img src="${p.imageUrl}" style="height:100px; object-fit: cover;" loading="lazy" alt="${p.title}">
-                        <div class="content-info">
-                            <h4>${p.title}</h4>
-                            <button class="admin-delete-btn" onclick="window.deleteContent('poster', '${p.id}')">
-                                <i class="fas fa-trash"></i> Delete
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            window.deleteContent = deleteContent;
-
-            function setupImageUpload(container, fileInput, previewEl, hiddenInput, progressBar, progressText, progressContainer) {
-                if (!container) return;
-                
-                container.addEventListener('click', () => fileInput.click());
-                
-                container.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    container.classList.add('dragover');
-                });
-                
-                container.addEventListener('dragleave', () => {
-                    container.classList.remove('dragover');
-                });
-                
-                container.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    container.classList.remove('dragover');
-                    if (e.dataTransfer.files?.[0]) {
-                        handleFileSelect(e.dataTransfer.files[0], previewEl, hiddenInput, progressBar, progressText, progressContainer);
-                    }
-                });
-                
-                fileInput.addEventListener('change', function() {
-                    if (this.files?.[0]) {
-                        handleFileSelect(this.files[0], previewEl, hiddenInput, progressBar, progressText, progressContainer);
-                    }
-                });
-            }
-            
-            function handleFileSelect(file, previewEl, hiddenInput, progressBar, progressText, progressContainer) {
-                const reader = new FileReader();
-                
-                progressContainer.style.display = 'block';
-                progressBar.style.width = '0%';
-                progressText.textContent = '0%';
-                
-                reader.onloadstart = () => {
-                    progressBar.style.width = '30%';
-                    progressText.textContent = '30%';
-                };
-                
-                reader.onprogress = (e) => {
-                    if (e.lengthComputable) {
-                        const percent = (e.loaded / e.total) * 70 + 30;
-                        progressBar.style.width = percent + '%';
-                        progressText.textContent = Math.round(percent) + '%';
-                    }
-                };
-                
-                reader.onload = e => { 
-                    progressBar.style.width = '100%';
-                    progressText.textContent = '100%';
-                    previewEl.innerHTML = `<img src="${e.target.result}" style="max-width:150px; max-height:120px; object-fit: cover;" alt="Preview">`; 
-                    hiddenInput.value = e.target.result; 
-                    
-                    setTimeout(() => {
-                        progressContainer.style.display = 'none';
-                    }, 500);
-                };
-                
-                reader.onerror = () => {
-                    showNotification('Error reading file', 'error');
-                    progressContainer.style.display = 'none';
-                };
-                
-                reader.readAsDataURL(file);
-            }
-
-            setupImageUpload(
-                posterImgContainer, posterImgFile, posterImgPreview, posterImgUrl,
-                posterProgressBar, posterProgressText, posterProgress
-            );
-            
-            setupImageUpload(
-                imageImgContainer, imageImgFile, imageImgPreview, imageImgUrl,
-                imageProgressBar, imageProgressText, imageProgress
-            );
-
-            threeLineMenu.addEventListener('click', function() { 
-                this.classList.toggle('active'); 
-                menuDropdown.classList.toggle('active'); 
-            });
-            
-            document.addEventListener('click', (e) => { 
-                if (!threeLineMenu.contains(e.target) && !menuDropdown.contains(e.target)) { 
-                    threeLineMenu.classList.remove('active'); 
-                    menuDropdown.classList.remove('active'); 
-                } 
-            });
-
-            document.getElementById('notice-btn')?.addEventListener('click', () => { 
-                window.open('https://faiz786-lada.github.io/ETH-registration/', '_blank'); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('query-form-btn')?.addEventListener('click', () => { 
-                window.open('https://faiz786-lada.github.io/ETH-query-form/', '_blank'); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('download-pdf-btn')?.addEventListener('click', () => { 
-                window.open('https://faiz786-lada.github.io/Pdf/', '_blank'); 
-                menuDropdown.classList.remove('active'); 
-            });
-
-            // New Attendance Button Event Listener
-            document.getElementById('attendance-btn')?.addEventListener('click', () => { 
-                window.open('https://faiz786-lada.github.io/ETH-attendance/', '_blank'); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('dark-mode-toggle-menu')?.addEventListener('click', () => { 
-                document.body.classList.toggle('dark-mode'); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('admin-login-btn-menu')?.addEventListener('click', () => { 
-                adminModal.style.display = 'flex'; 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('home-btn-menu')?.addEventListener('click', () => { 
-                window.scrollTo({top:0,behavior:'smooth'}); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('posters-btn-menu')?.addEventListener('click', () => { 
-                document.getElementById('posters').scrollIntoView({behavior:'smooth'}); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('images-btn-menu')?.addEventListener('click', () => { 
-                document.getElementById('images').scrollIntoView({behavior:'smooth'}); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('videos-btn-menu')?.addEventListener('click', () => { 
-                document.getElementById('videos').scrollIntoView({behavior:'smooth'}); 
-                menuDropdown.classList.remove('active'); 
-            });
-            
-            document.getElementById('contact-btn-menu')?.addEventListener('click', () => { 
-                document.getElementById('contact').scrollIntoView({behavior:'smooth'}); 
-                menuDropdown.classList.remove('active'); 
-            });
-
-            window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 300));
-            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-            closeModal.addEventListener('click', () => adminModal.style.display = 'none');
-            window.addEventListener('click', (e) => { if (e.target === adminModal) adminModal.style.display = 'none'; });
-
-            adminLoginForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = document.getElementById('admin-email').value;
-                const pwd = document.getElementById('admin-password').value;
-                
-                if (email === ADMIN_EMAIL && pwd === ADMIN_PASSWORD) {
-                    adminModal.style.display = 'none';
-                    adminPanel.style.display = 'block';
-                    showNotification('Logged in as Admin', 'success');
-                    renderPosters(); 
-                    renderImages(); 
-                    renderVideos();
-                    renderAdminPosters(); 
-                    renderAdminImages(); 
-                    renderAdminVideos(); 
-                } else {
-                    showNotification('Invalid email or password!', 'error');
-                }
-            });
-
-            logoutBtn.addEventListener('click', () => { 
-                adminPanel.style.display = 'none'; 
-                showNotification('Logged out', 'success');
-                renderPosters(); 
-                renderImages(); 
-                renderVideos();
-            });
-
-            imageForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const title = document.getElementById('image-title').value;
-                const description = document.getElementById('image-description').value;
-                const imageUrl = imageImgUrl.value;
-                
-                if (!imageUrl) {
-                    showNotification('Please select an image', 'error');
-                    return;
-                }
-                
-                imageUploadBtn.disabled = true;
-                imageProgress.style.display = 'block';
-                imageProgressBar.style.width = '50%';
-                imageProgressText.textContent = '50%';
-                
-                try { 
-                    const data = { 
-                        title, 
-                        description, 
-                        imageUrl, 
-                        timestamp: serverTimestamp()
-                    };
-                    
-                    await addDoc(collection(db, 'images'), data); 
-                    
-                    imageProgressBar.style.width = '100%';
-                    imageProgressText.textContent = '100%';
-                    
-                    showNotification('Image uploaded successfully', 'success'); 
-                    imageForm.reset(); 
-                    imageImgPreview.innerHTML=''; 
-                    imageImgUrl.value=''; 
-                    
-                    await loadImages();
-                    renderImages();
-                    if (adminPanel.style.display === 'block') renderAdminImages();
-                    
-                    setTimeout(() => {
-                        imageProgress.style.display = 'none';
-                        imageProgressBar.style.width = '0%';
-                        imageProgressText.textContent = '0%';
-                        imageUploadBtn.disabled = false;
-                    }, 1000);
-                    
-                } catch (err) { 
-                    console.error('Upload error:', err);
-                    showNotification('Error uploading image: ' + err.message, 'error'); 
-                    imageProgress.style.display = 'none';
-                    imageUploadBtn.disabled = false;
-                }
-            });
-
-            videoForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const title = document.getElementById('video-title').value;
-                const description = document.getElementById('video-description').value;
-                const videoUrl = document.getElementById('video-url').value;
-                
-                if (!videoUrl) {
-                    showNotification('Please enter video URL', 'error');
-                    return;
-                }
-                
-                videoUploadBtn.disabled = true;
-                videoProgress.style.display = 'block';
-                videoProgressBar.style.width = '50%';
-                videoProgressText.textContent = '50%';
-                
-                try { 
-                    const data = { 
-                        title, 
-                        description, 
-                        videoUrl, 
-                        timestamp: serverTimestamp()
-                    };
-                    
-                    await addDoc(collection(db, 'videos'), data); 
-                    
-                    videoProgressBar.style.width = '100%';
-                    videoProgressText.textContent = '100%';
-                    
-                    showNotification('Video uploaded successfully', 'success'); 
-                    videoForm.reset(); 
-                    
-                    await loadVideos();
-                    renderVideos();
-                    if (adminPanel.style.display === 'block') renderAdminVideos();
-                    
-                    setTimeout(() => {
-                        videoProgress.style.display = 'none';
-                        videoProgressBar.style.width = '0%';
-                        videoProgressText.textContent = '0%';
-                        videoUploadBtn.disabled = false;
-                    }, 1000);
-                    
-                } catch (err) { 
-                    console.error('Upload error:', err);
-                    showNotification('Error uploading video: ' + err.message, 'error'); 
-                    videoProgress.style.display = 'none';
-                    videoUploadBtn.disabled = false;
-                }
-            });
-
-            posterForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const title = document.getElementById('poster-title').value;
-                const description = document.getElementById('poster-description').value;
-                const imageUrl = posterImgUrl.value;
-                
-                if (!imageUrl) {
-                    showNotification('Please select a poster image', 'error');
-                    return;
-                }
-                
-                posterUploadBtn.disabled = true;
-                posterProgress.style.display = 'block';
-                posterProgressBar.style.width = '50%';
-                posterProgressText.textContent = '50%';
-                
-                try { 
-                    const data = { 
-                        title, 
-                        description, 
-                        imageUrl, 
-                        timestamp: serverTimestamp()
-                    };
-                    
-                    await addDoc(collection(db, 'posters'), data); 
-                    
-                    posterProgressBar.style.width = '100%';
-                    posterProgressText.textContent = '100%';
-                    
-                    showNotification('Poster uploaded successfully', 'success'); 
-                    posterForm.reset(); 
-                    posterImgPreview.innerHTML=''; 
-                    posterImgUrl.value=''; 
-                    
-                    await loadPosters();
-                    renderPosters();
-                    if (adminPanel.style.display === 'block') renderAdminPosters();
-                    
-                    setTimeout(() => {
-                        posterProgress.style.display = 'none';
-                        posterProgressBar.style.width = '0%';
-                        posterProgressText.textContent = '0%';
-                        posterUploadBtn.disabled = false;
-                    }, 1000);
-                    
-                } catch (err) { 
-                    console.error('Upload error:', err);
-                    showNotification('Error uploading poster: ' + err.message, 'error'); 
-                    posterProgress.style.display = 'none';
-                    posterUploadBtn.disabled = false;
-                }
-            });
-
-            let searchTimeout;
-            searchBar.addEventListener('input', function() {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    let term = this.value.toLowerCase();
-                    if (!term) { 
-                        renderPosters(posters); 
-                        renderImages(images); 
-                        renderVideos(videos); 
-                        return; 
-                    }
-                    renderPosters(posters.filter(p => p.title.toLowerCase().includes(term) || (p.description && p.description.toLowerCase().includes(term))));
-                    renderImages(images.filter(a => a.title.toLowerCase().includes(term) || (a.description && a.description.toLowerCase().includes(term))));
-                    renderVideos(videos.filter(v => v.title.toLowerCase().includes(term) || (v.description && v.description.toLowerCase().includes(term))));
-                }, 300);
-            });
-
-            categories.addEventListener('click', (e) => {
-                if (!e.target.classList.contains('category-btn')) return;
-                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                let cat = e.target.dataset.category;
-                if (cat === 'all') { 
-                    renderPosters(posters); 
-                    renderImages(images); 
-                    renderVideos(videos); 
-                } else if (cat === 'poster') {
-                    renderPosters(posters);
-                    imagesGrid.innerHTML = ''; 
-                    videosGrid.innerHTML = ''; 
-                } else if (cat === 'image') {
-                    renderImages(images);
-                    postersGrid.innerHTML = ''; 
-                    videosGrid.innerHTML = ''; 
-                } else if (cat === 'video') {
-                    renderVideos(videos);
-                    postersGrid.innerHTML = ''; 
-                    imagesGrid.innerHTML = ''; 
-                }
-            });
-
+    /* ── UPLOAD HELPERS ── */
+    async function handleUpload(type, data, btn, pBar, pText, pContainer, onSuccess) {
+        if (!window.__firebase) { showNotification('Firebase not ready, please wait…', 'warning'); return; }
+        const { db, collection, addDoc, serverTimestamp } = window.__firebase;
+        btn.disabled = true;
+        pContainer.style.display = 'block';
+        pBar.style.width = '30%'; pText.textContent = '30%';
+        try {
+            pBar.style.width = '60%'; pText.textContent = '60%';
+            await addDoc(collection(db, type + 's'), { ...data, timestamp: serverTimestamp() });
+            pBar.style.width = '100%'; pText.textContent = '100%';
+            showNotification(`${type.charAt(0).toUpperCase() + type.slice(1)} uploaded successfully!`, 'success');
+            logActivity(`Uploaded ${type}: "${data.title}"`, 'green');
+            onSuccess();
+            await loadAll(true);
+            if (isAdmin) { renderAdminManageGrid(); updateStats(); }
+        } catch (err) {
+            console.error(err);
+            showNotification('Upload failed: ' + err.message, 'error');
+            logActivity('Upload failed: ' + err.message, 'red');
+        } finally {
             setTimeout(() => {
-                loadAll();
-            }, 100);
+                pContainer.style.display = 'none';
+                pBar.style.width = '0%'; pText.textContent = '0%';
+                btn.disabled = false;
+            }, 800);
+        }
+    }
 
-            window.retryLoad = loadAll;
-        })();
-    </script>
+    /* Form submissions */
+    posterForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const imageUrl = posterImgUrl.value;
+        if (!imageUrl) { showNotification('Please select a poster image', 'error'); return; }
+        await handleUpload('poster', {
+            title: $('poster-title').value.trim(),
+            description: $('poster-description').value.trim(),
+            imageUrl
+        }, posterUploadBtn, posterProgressBar, posterProgressText, posterProgress, () => {
+            posterForm.reset(); posterImgPreview.innerHTML = ''; posterImgUrl.value = '';
+        });
+    });
+
+    imageForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const imageUrl = imageImgUrl.value;
+        if (!imageUrl) { showNotification('Please select an image', 'error'); return; }
+        await handleUpload('image', {
+            title: $('image-title').value.trim(),
+            description: $('image-description').value.trim(),
+            imageUrl
+        }, imageUploadBtn, imageProgressBar, imageProgressText, imageProgress, () => {
+            imageForm.reset(); imageImgPreview.innerHTML = ''; imageImgUrl.value = '';
+        });
+    });
+
+    videoForm.addEventListener('submit', async e => {
+        e.preventDefault();
+        const videoUrl = $('video-url').value.trim();
+        if (!videoUrl) { showNotification('Please enter a video URL', 'error'); return; }
+        await handleUpload('video', {
+            title: $('video-title').value.trim(),
+            description: $('video-description').value.trim(),
+            videoUrl
+        }, videoUploadBtn, videoProgressBar, videoProgressText, videoProgress, () => {
+            videoForm.reset(); $('video-url-preview').innerHTML = ''; $('video-preview-wrap').style.display = 'none';
+        });
+    });
+
+    /* ── SEARCH ── */
+    let searchTimer;
+    searchBar.addEventListener('input', function() {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => {
+            const term = this.value.toLowerCase().trim();
+            searchClear.style.display = term ? 'block' : 'none';
+            if (!term) { renderAll(); return; }
+            const match = item => item.title?.toLowerCase().includes(term) || item.description?.toLowerCase().includes(term);
+            renderPosters(posters.filter(match));
+            renderImages(images.filter(match));
+            renderVideos(videos.filter(match));
+        }, 280);
+    });
+
+    searchClear.addEventListener('click', () => {
+        searchBar.value = ''; searchClear.style.display = 'none';
+        renderAll(); searchBar.focus();
+    });
+
+    /* ── CATEGORIES ── */
+    categories.addEventListener('click', e => {
+        const btn = e.target.closest('.category-btn');
+        if (!btn) return;
+        document.querySelectorAll('#categories .category-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.category;
+        if (cat === 'all') { renderAll(); return; }
+        if (cat === 'poster') { renderPosters(); imagesGrid.innerHTML = ''; videosGrid.innerHTML = ''; }
+        if (cat === 'image')  { renderImages(); postersGrid.innerHTML = ''; videosGrid.innerHTML = ''; }
+        if (cat === 'video')  { renderVideos(); postersGrid.innerHTML = ''; imagesGrid.innerHTML = ''; }
+    });
+
+    /* ── ADMIN SIDEBAR NAVIGATION ── */
+    const viewTitles = {
+        dashboard: '📊 Dashboard',
+        'upload-poster': '🖼️ Upload Poster',
+        'upload-image': '📸 Upload Image',
+        'upload-video': '🎬 Upload Video',
+        manage: '📋 Manage Content',
+        logo: '🎨 Logo Settings',
+        settings: '⚙️ Settings'
+    };
+
+    function switchView(viewName) {
+        document.querySelectorAll('.admin-view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+        const view = $('view-' + viewName);
+        if (view) view.classList.add('active');
+        const sBtn = document.querySelector(`.sidebar-btn[data-view="${viewName}"]`);
+        if (sBtn) sBtn.classList.add('active');
+        $('admin-view-title').textContent = viewTitles[viewName] || viewName;
+        if (viewName === 'manage') renderAdminManageGrid();
+        if (viewName === 'logo') renderLogoStatus();
+    }
+
+    document.querySelectorAll('.sidebar-btn[data-view]').forEach(btn => {
+        btn.addEventListener('click', () => switchView(btn.dataset.view));
+    });
+
+    document.querySelectorAll('[data-nav]').forEach(el => {
+        el.addEventListener('click', () => switchView(el.dataset.nav));
+    });
+
+    /* ── MENU ── */
+    threeLineMenu.addEventListener('click', function() {
+        const open = this.classList.toggle('active');
+        menuDropdown.classList.toggle('active', open);
+        this.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+        if (!threeLineMenu.contains(e.target) && !menuDropdown.contains(e.target)) {
+            threeLineMenu.classList.remove('active');
+            menuDropdown.classList.remove('active');
+            threeLineMenu.setAttribute('aria-expanded', false);
+        }
+    });
+
+    const menuActions = {
+        'notice-btn':            () => window.open('https://faiz786-lada.github.io/ETH-registration/', '_blank'),
+        'query-form-btn':        () => window.open('https://faiz786-lada.github.io/ETH-query-form/', '_blank'),
+        'download-pdf-btn':      () => window.open('https://faiz786-lada.github.io/Pdf/', '_blank'),
+        'attendance-btn':        () => window.open('https://faiz786-lada.github.io/ETH-attendance/', '_blank'),
+        'dark-mode-toggle-menu': () => {
+            document.body.classList.toggle('dark-mode');
+            const dm = $('setting-dark-mode');
+            if (dm) dm.checked = document.body.classList.contains('dark-mode');
+        },
+        'admin-login-btn-menu':  () => { adminModal.style.display = 'flex'; },
+        'home-btn-menu':         () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+        'posters-btn-menu':      () => $('posters').scrollIntoView({ behavior: 'smooth' }),
+        'images-btn-menu':       () => $('images').scrollIntoView({ behavior: 'smooth' }),
+        'videos-btn-menu':       () => $('videos').scrollIntoView({ behavior: 'smooth' }),
+        'contact-btn-menu':      () => $('contact').scrollIntoView({ behavior: 'smooth' }),
+    };
+
+    Object.entries(menuActions).forEach(([id, fn]) => {
+        $(id)?.addEventListener('click', () => {
+            fn();
+            threeLineMenu.classList.remove('active');
+            menuDropdown.classList.remove('active');
+        });
+    });
+
+    /* ── SETTINGS DARK MODE TOGGLE ── */
+    $('setting-dark-mode')?.addEventListener('change', function() {
+        document.body.classList.toggle('dark-mode', this.checked);
+    });
+
+    /* ── ADMIN LOGIN / LOGOUT ── */
+    closeModalBtn.addEventListener('click', () => { adminModal.style.display = 'none'; });
+    window.addEventListener('click', e => { if (e.target === adminModal) adminModal.style.display = 'none'; });
+
+    adminLoginForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const email = $('admin-email').value.trim();
+        const pwd   = $('admin-password').value;
+        if (email === ADMIN_EMAIL && pwd === ADMIN_PASSWORD) {
+            isAdmin = true;
+            adminModal.style.display = 'none';
+            adminPanel.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            showNotification('Welcome back, Admin! 👋', 'success');
+            logActivity('Admin logged in', 'blue');
+            updateStats();
+            renderAdminManageGrid();
+            renderActivityLog();
+            renderLogoStatus();
+            switchView('dashboard');
+        } else {
+            showNotification('Invalid credentials', 'error');
+        }
+    });
+
+    logoutBtn.addEventListener('click', () => {
+        isAdmin = false;
+        adminPanel.style.display = 'none';
+        document.body.style.overflow = '';
+        showNotification('Logged out successfully', 'success');
+        renderAll();
+    });
+
+    /* ── LOGO MANAGEMENT ── */
+    const LOGO_KEY = 'eth_website_logo';
+
+    function applyHeaderLogo(src) {
+        const wrap = $('header-logo-wrap');
+        if (!src) {
+            wrap.innerHTML = `<div class="website-logo-placeholder" id="header-logo-placeholder" title="No logo set"><i class="fas fa-image"></i></div>`;
+            return;
+        }
+        wrap.innerHTML = `<img class="website-logo-img" src="${escHtml(src)}" alt="Website Logo" title="Website Logo">`;
+    }
+
+    function renderLogoStatus() {
+        const saved = localStorage.getItem(LOGO_KEY);
+        const status = $('current-logo-status');
+        if (!status) return;
+        if (saved) {
+            status.innerHTML = `<i class="fas fa-check-circle" style="color:var(--success)"></i> Logo is set. <span style="color:var(--text-muted);font-size:0.78rem">Saved in Firestore & browser.</span>`;
+        } else {
+            status.innerHTML = `<i class="fas fa-info-circle"></i> No logo currently set.`;
+        }
+    }
+
+    // Load logo from Firestore, fallback to localStorage
+    async function loadSavedLogo() {
+        // First apply from localStorage for instant display
+        const cached = localStorage.getItem(LOGO_KEY);
+        if (cached) applyHeaderLogo(cached);
+
+        // Then try Firestore for latest value
+        try {
+            if (!window.__firebase) return;
+            const { db, collection, getDocs } = window.__firebase;
+            const snap = await getDocs(collection(db, 'settings'));
+            snap.forEach(d => {
+                if (d.id === 'logo') {
+                    const src = d.data().src;
+                    if (src) {
+                        applyHeaderLogo(src);
+                        localStorage.setItem(LOGO_KEY, src);
+                    }
+                }
+            });
+        } catch (e) {
+            console.warn('Logo load from Firestore failed, using localStorage:', e.message);
+        }
+    }
+
+    // Logo upload area
+    const logoUploadArea = $('logo-upload-area');
+    const logoFileInput  = $('logo-file-input');
+
+    logoUploadArea.addEventListener('click', () => logoFileInput.click());
+    logoUploadArea.addEventListener('dragover', e => { e.preventDefault(); logoUploadArea.classList.add('dragover'); });
+    logoUploadArea.addEventListener('dragleave', () => logoUploadArea.classList.remove('dragover'));
+    logoUploadArea.addEventListener('drop', e => {
+        e.preventDefault(); logoUploadArea.classList.remove('dragover');
+        if (e.dataTransfer.files?.[0]) handleLogoFile(e.dataTransfer.files[0]);
+    });
+    logoFileInput.addEventListener('change', function() {
+        if (this.files?.[0]) handleLogoFile(this.files[0]);
+    });
+
+    function handleLogoFile(file) {
+        if (!file.type.startsWith('image/')) { showNotification('Please select an image file', 'error'); return; }
+        if (file.size > 2 * 1024 * 1024) { showNotification('Logo must be under 2MB', 'error'); return; }
+        const reader = new FileReader();
+        reader.onload = e => {
+            const src = e.target.result;
+            $('logo-preview-img').src = src;
+            $('logo-preview-section').style.display = 'block';
+            // Preview live in header
+            applyHeaderLogo(src);
+        };
+        reader.readAsDataURL(file);
+    }
+
+    $('save-logo-btn')?.addEventListener('click', async () => {
+        const src = $('logo-preview-img').src;
+        if (!src || src === window.location.href) { showNotification('No logo selected', 'error'); return; }
+        try {
+            // Save to localStorage
+            localStorage.setItem(LOGO_KEY, src);
+            // Save to Firestore
+            if (window.__firebase) {
+                const { db, doc, collection } = window.__firebase;
+                // Use setDoc via a workaround with addDoc-compatible approach
+                const { setDoc } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js");
+                await setDoc(doc(db, 'settings', 'logo'), { src, updatedAt: new Date().toISOString() });
+            }
+            showNotification('Logo saved to Firestore! 🎉', 'success');
+            logActivity('Website logo updated & saved to Firestore', 'green');
+            renderLogoStatus();
+        } catch (e) {
+            console.error(e);
+            showNotification('Firestore save failed, saved locally only.', 'warning');
+            logActivity('Logo saved locally only: ' + e.message, 'amber');
+            renderLogoStatus();
+        }
+    });
+
+    $('remove-logo-btn')?.addEventListener('click', async () => {
+        localStorage.removeItem(LOGO_KEY);
+        applyHeaderLogo(null);
+        $('logo-preview-section').style.display = 'none';
+        $('logo-preview-img').src = '';
+        logoFileInput.value = '';
+        // Remove from Firestore
+        try {
+            if (window.__firebase) {
+                const { db, doc, deleteDoc } = window.__firebase;
+                await deleteDoc(doc(db, 'settings', 'logo'));
+            }
+            showNotification('Logo removed from Firestore', 'info');
+        } catch (e) {
+            showNotification('Logo removed locally', 'info');
+        }
+        logActivity('Website logo removed', 'amber');
+        renderLogoStatus();
+    });
+
+    /* ── SCROLL ── */
+    window.addEventListener('scroll', () => {
+        backToTop.classList.toggle('visible', window.scrollY > 350);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ── INIT ── */
+    document.addEventListener('firebase-ready', () => {
+        logActivity('Firebase connected', 'green');
+        loadSavedLogo();
+        loadAll();
+    });
+    // Fallback: if firebase module already loaded before this script ran
+    if (window.__firebaseReady) {
+        logActivity('Firebase connected', 'green');
+        loadSavedLogo();
+        loadAll();
+    }
+
+    /* ── LIGHTBOX ── */
+    const lightboxOverlay = $('lightbox-overlay');
+    const lightboxImg     = $('lightbox-img');
+    const lightboxCaption = $('lightbox-caption');
+    const lightboxClose   = $('lightbox-close');
+
+    function openLightbox(src, caption) {
+        lightboxImg.src = src; lightboxImg.alt = caption || '';
+        lightboxCaption.textContent = caption || '';
+        lightboxOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        lightboxOverlay.classList.remove('active');
+        lightboxImg.src = ''; document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', e => {
+        const img = e.target.closest('img[data-lightbox]');
+        if (img) { e.stopPropagation(); openLightbox(img.dataset.lightbox, img.dataset.caption); return; }
+        if (e.target === lightboxOverlay) closeLightbox();
+    });
+    lightboxClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); } });
+
+})();
+</script>
 </body>
 </html>
